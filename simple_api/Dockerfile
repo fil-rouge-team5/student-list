@@ -16,7 +16,6 @@ RUN apt-get update -y
 
 
 # copy source code
-#ADD student_age.json/  /
 ADD student_age.py/  /
 
 VOLUME [ "/data" ]
