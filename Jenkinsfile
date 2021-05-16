@@ -20,8 +20,8 @@ pipeline  {
 			steps {
 				script {
 					sh '''
-					docker run --name $IMAGE_NAME -d -p 35:5000 --network $TEAM5_NETWORK -v ${PWD}/student_age.json:/data/student_age.json $IMAGE_NAME:$IMAGE_TAG
-					sleep 5
+		docker run --name $IMAGE_NAME -d -p 35:5000 --network $TEAM5_NETWORK -v ${PWD}/student_age.json:/data/student_age.json $IMAGE_NAME:$IMAGE_TAG
+		sleep 5
 					'''
 				}
 			}
@@ -46,21 +46,6 @@ pipeline  {
 						'''
 				}
 			}
-		}
-					
-	stage('Push image on dockerhub') {
-	           agent any 
-	           environment {
-	                DOCKERHUB_LOGIN = credentials('dockerhub_team5')
-	            }
-	           steps {
-	               script {
-	                   sh '''
-			      docker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}
-	                      docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
-	                   '''
-	               }
-	           }
 	        }
 	}
 }
