@@ -20,7 +20,7 @@ pipeline  {
 			steps {
 				script {
 					sh '''
-		docker run --name $IMAGE_NAME -d -p 35:5000 --network $TEAM5_NETWORK -v "$PWD"/student_age.json:/data/student_age.json $IMAGE_NAME:$IMAGE_TAG
+		docker run --name $IMAGE_NAME -d -p 35:5000 --network $TEAM5_NETWORK -v "$WORKSPACE"/student_age.json:/data/student_age.json $IMAGE_NAME:$IMAGE_TAG
 		sleep 5
 					'''
 				}
