@@ -7,7 +7,7 @@ services:
         volumes:
             - ./simple_api/student_age.json:/data/student_age.json
     website:
-        image: php:apache
+        image: php:7.2-apache
         container_name: my_container_php
         environment:
             - USERNAME=toto
