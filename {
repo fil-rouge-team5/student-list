@@ -6676,8 +6676,343 @@ PLAY RECAP *********************************************************************
 [1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
 [1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[K[4d[K[A[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list[centos@localhost student-list]$ nano Jenkinsfile 
 [?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh '''[28;29Hdocker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[6d[9d[21d[24d[27d[39d[K[30d[33d[36d[20;25r[20;1H[3T[1;41r[3;16H[1K	}[4;13H    stage('Run container based on builded image') {[5;17H    agent any[K[6;17H    steps {[K[7;23H[1K script {[K[8;25H[1K sh '''[9;28H[1K docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[10;28H[1K sleep 5[11;25H[1K '''[K[12;21H   }[K[13;21H}[K[14;17H}[K[15;17Hstage('Test image') {[16;21Hagent any[K[17;21Hsteps {[K[18;25Hscript {[K[19;28H sh '''[20d  curl http://172.17.0.1:80/ | grep -q "error"[21;29H'''[22d	}[24;17H}[K[25;32H[1K	stage('Clean Container') {[26;42H[1K agent any[27;42H[1K steps {[28;49H[1K script {[K[29;51H[1K sh '''[30d[1K docker rm -vf ${IMAGE_NAME}[31;51H[1K '''[32;48H[1K	}[33;40H[1K	}[34;32H[1K	}[K[35;33H[1K stage('Push image on dockerhub') {[36;43H[1K agent any[37;43H[1K environment {[38d[1K	DOCKERHUB_LOGIN = credentials('dockerhub_team5')[20d[23d[26d[29d[2;39r[39;1H[19S[1;41r[2;1H[K[20;49H}[21;44Hsteps {[22d script {[23dsh '''[24;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[25;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[26;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[27;60H'''[28;57H}[29;49H}[30;41H}[31dstage('Ansible deploy') {[32;45Hagent {[33;49Hdocker {[34dimage 'dirane/docker-ansible'[35;49H}[36;45H}[37dsteps {[38;49Hscript {[22d[25d[28d[31d[37d[2;39r[39;1H[19S[1;41r[2;1H[K[20;53Hsh '''[21;57Hcd ansible[22;57Hansible-playbook -i prod.yml install-docker.yml[23;57Hansible-playbook -i prod.yml student-list.yml[24;53H'''[25;49H}[26;45H}[27;41H}[28;33H}[29;25H}[21d[24d[27d[30d[31d[28d[25d[22d[19d[20d[21d[22d[23d[A[A[19d[17d[A[A[13d[11d[9d[A[6d[A[3d[2;39r[2;1H[19T[1;41r[3;33H}[4;25H}[5;17H}[6;33Hstage('Clean Container') {[7;43Hagent any[8;43Hsteps {[9dscript {[10;52Hsh '''[11d docker rm -vf ${IMAGE_NAME}[12;52H'''[13;49H}[14;41H}[15;33H}[16dstage('Push image on dockerhub') {[17;44Hagent any[18;44Henvironment {[19dDOCKERHUB_LOGIN = credentials('dockerhub_team5')[20;49H}[21;44Hsteps {[39d[K[21d[A[A[20d[21d[22d[23d[25d[27d[28d[29d[31d[32d[34d[35d[36d[38d7[2;39r8[39d[19S[1;41r[2;1H[K[20;53Hsh '''[21;57Hcd ansible[22;57Hansible-playbook -i prod.yml install-docker.yml[23;57Hansible-playbook -i prod.yml student-list.yml[24;53H'''[25;49H}[26;45H}[27;41H}[28;33H}[29;25H}[21d[A[A[20d[21d[23d[25d[26d[28d[29d[31d[A[A[A[A[A[A[26d       	       	       	  [27d[28d[Z[Z	7[28;39r8M[1;41r[1;153H(B[0;7mModified[29;31H(B[m}[K[A7[3;28r8[8S[1;41r[29;39r[29;1H[4T[1;41r[20;81Hstage('test application') {[21;89Hagent { docker { image 'dirane/docker-ansible:latest' } }[22;89Hsteps {[23d	script {[24dsh '''[25d	cd ansible[26;113Hansible-playbook -i prod.yml test.yml[27;107H'''[28;97H}[29;89H}[30;81H}[31;73H}[32;65H}[2;39r[2;1H[4T[1;41r[3;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60H'''[5;57H}[6;49H}[36;66H[3;39r[39;1H[14S[1;41r[22;66H[2;39r[2;1H[4T[1;41r[3;45H}[4dsteps {[5;49Hscript {[6;53Hsh '''[26;66H[2;39r[2;1H[4T[1;41r[3;45Hagent {[4;49Hdocker {[5dimage 'dirane/docker-ansible'[6;49H}[30;66H[2;39r[2;1H[4T[1;41r[3;57H}[4;49H}[5;41H}[6dstage('Ansible deploy') {[34;66H[2;38r[2;1H[4T[1;41r[3;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[5;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[6;60H'''[38;66H7[3;39r8[39d[14S[1;41r[25;31H}[26;25H}[24;66H[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list[centos@localhost student-list]$ nano Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh '''[28;29Hdocker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0ntainer') {[7;43Hagent any[8;43Hsteps {[9dscript {[10;52Hsh '''[11d docker rm -vf ${IMAGE_NAME}[12;52H'''[13;49H}[14;41H}[15;33H}[16dstage('Push image on dockerhub') {[17;44Hagent any[18;44Henvironment {[19dDOCKERHUB_LOGIN = credentials('dockerhub_team5')[20;49H}[21;44Hsteps {[39d[K[21d[A[A[20d[21d[22d[23d[25d[27d[28d[29d[31d[32d[34d[35d[36d[38d7[2;39r8[39d[19S[1;41r[2;1H[K[20;53Hsh '''[21;57Hcd ansible[22;57Hansible-playbook -i prod.yml install-docker.yml[23;57Hansible-playbook -i prod.yml student-list.yml[24;53H'''[25;49H}[26;45H}[27;41H}[28;33H}[29;25H}[21d[A[A[20d[21d[23d[25d[26d[28d[29d[31d[A[A[A[A[A[A[26d       	       	       	  [27d[28d[Z[Z	7[28;39r8M[1;41r[1;153H(B[0;7mModified[29;31H(B[m}[K[A7[3;28r8[8S[1;41r[29;39r[29;1H[4T[1;41r[20;81Hstage('test application') {[21;89Hagent { docker { image 'dirane/docker-ansible:latest' } }[22;89Hsteps {[23d	script {[24dsh '''[25d	cd ansible[26;113Hansible-playbook -i prod.yml test.yml[27;107H'''[28;97H}[29;89H}[30;81H}[31;73H}[32;65H}[2;39r[2;1H[4T[1;41r[3;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60H'''[5;57H}[6;49H}[36;66H[3;39r[39;1H[14S[1;41r[22;66H[2;39r[2;1H[4T[1;41r[3;45H}[4dsteps {[5;49Hscript {[6;53Hsh '''[26;66H[2;39r[2;1H[4T[1;41r[3;45Hagent {[4;49Hdocker {[5dimage 'dirane/docker-ansible'[6;49H}[30;66H[2;39r[2;1H[4T[1;41r[3;57H}[4;49H}[5;41H}[6dstage('Ansible deploy') {[34;66H[2;38r[2;1H[4T[1;41r[3;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[5;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[6;60H'''[38;66H7[3;39r8[39d[14S[1;41r[25;31H}[26;25H}[24;66H[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list[centos@localhost student-list]$ nano Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh '''[28;29Hdocker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[6d[9d[12d[15d[18d[21d[24d[27d[39d[K[30d[33d[36d[20;25r[20;1H[3T[1;41r[3;16H[1K	}[4;13H    stage('Run container based on builded image') {[5;17H    agent any[K[6;17H    steps {[K[7;23H[1K script {[K[8;25H[1K sh '''[9;28H[1K docker run --name ${IMAGE_NAME[25d[26d[28d[29d[31d[A[A[A[A[A[A[26d       	       	       	  [27d[28d[Z[Z	7[28;39r8M[1;41r[1;153H(B[0;7mModified[29;31H(B[m}[K[A7[3;28r8[8S[1;41r[29;39r[29;1H[4T[1;41r[20;81Hstage('test application') {[21;89Hagent { docker { image 'dirane/docker-ansible:latest' } }[22;89Hsteps {[23d	script {[24dsh '''[25d	cd ansible[26;113Hansible-playbook -i prod.yml test.yml[27;107H'''[28;97H}[29;89H}[30;81H}[31;73H}[32;65H}[2;39r[2;1H[4T[1;41r[3;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60H'''[5;57H}[6;49H}[36;66H[3;39r[39;1H[14S[1;41r[22;66H[2;39r[2;1H[4T[1;41r[3;45H}[4dsteps {[5;49Hscript {[6;53Hsh '''[26;66H[2;39r[2;1H[4T[1;41r[3;45Hagent {[4;49Hdocker {[5dimage 'dirane/docker-ansible'[6;49H}[30;66H[2;39r[2;1H[4T[1;41r[3;57H}[4;49H}[5;41H}[6dstage('Ansible deploy') {[34;66H[2;38r[2;1H[4T[1;41r[3;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[5;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[6;60H'''[38;66H7[3;39r8[39d[14S[1;41r[25;31H}[26;25H}[24;66H[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list[centos@localhost student-list]$ nano Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh '''[28;29Hdocker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[6d[9d[12d[15d[18d[21d[24d[27d[39d[K[30d[33d[36d[20;25r[20;1H[3T[1;41r[3;16H[1K	}[4;13H    stage('Run container based on builded image') {[5;17H    agent any[K[6;17H    steps {[K[7;23H[1K script {[K[8;25H[1K sh '''[9;28H[1K docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[10;28H[1K sleep 5[11;25H[1K '''[K[12;21H   }[K[13;21H}[K[14;17H}[K[15;17Hstage('Test image') {[16;21Hagent any[K[17;21Hsteps {[K[18;25Hscript {[K[19;28H sh '''[20d  curl http://172.17.0.1:80/ | grep -q "error"[21;29H'''[22d	}[24;17H}[K[25;32H[1K	stage('Clean Container') {[26;42H[1K agent any[27;42H[1K steps {[28;49H[1K script {[K[29;51H[1K sh '''[30d[1K docker rm -vf ${IMAGE_NAME}[31;51H[1K '''[32;48H[1K	}[33;40H[1K	}[34;32H[1K	}[K[35;33H[1K stage('Push image on dockerhub') {[36;43HH}[28;33H}[29;25H}[21d[A[A[20d[21d[23d[25d[26d[28d[29d[31d[A[A[A[A[A[A[26d       	       	       	  [27d[28d[Z[Z	7[28;39r8M[1;41r[1;153H(B[0;7mModified[29;31H(B[m}[K[A7[3;28r8[8S[1;41r[29;39r[29;1H[4T[1;41r[20;81Hstage('test application') {[21;89Hagent { docker { image 'dirane/docker-ansible:latest' } }[22;89Hsteps {[23d	script {[24dsh '''[25d	cd ansible[26;113Hansible-playbook -i prod.yml test.yml[27;107H'''[28;97H}[29;89H}[30;81H}[31;73H}[32;65H}[2;39r[2;1H[4T[1;41r[3;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60H'''[5;57H}[6;49H}[36;66H[3;39r[39;1H[14S[1;41r[22;66H[2;39r[2;1H[4T[1;41r[3;45H}[4dsteps {[5;49Hscript {[6;53Hsh '''[26;66H[2;39r[2;1H[4T[1;41r[3;45Hagent {[4;49Hdocker {[5dimage 'dirane/docker-ansible'[6;49H}[30;66H[2;39r[2;1H[4T[1;41r[3;57H}[4;49H}[5;41H}[6dstage('Ansible deploy') {[34;66H[2;38r[2;1H[4T[1;41r[3;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[5;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[6;60H'''[38;66H7[3;39r8[39d[14S[1;41r[25;31H}[26;25H}[24;66H[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list[centos@localhost student-list]$ nano Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh '''[28;29Hdocker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[6d[9d[12d[15d[18d[21d[24d[27d[39d[K[30d[33d[36d[20;25r[20;1H[3T[1;41r[3;16H[1K	}[4;13H    stage('Run container based on builded image') {[5;17H    agent any[K[6;17H    steps {[K[7;23H[1K script {[K[8;25H[1K sh '''[9;28H[1K docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[10;28H[1K sleep 5[11;25H[1K '''[K[12;21H   }[K[13;21H}[K[14;17H}[K[15;17Hstage('Test image') {[16;21Hagent any[K[17;21Hsteps {[K[18;25Hscript {[K[19;28H sh '''[20d  curl http://172.17.0.1:80/ | grep -q "error"[21;29H'''[22d	}[24;17H}[K[25;32H[1K	stage('Clean Container') {[26;42H[1K agent any[27;42H[1K steps {[28;49H[1K script {[K[29;51H[1K sh '''[30d[1K docker rm -vf ${IMAGE_NAME}[31;51H[1K '''[32;48H[1K	}[33;40H[1K	}[34;32H[1K	}[K[35;33Hsh '''[11d docker rm -vf ${IMAGE_NAME}[12;52H'''[13;49H}[14;41H}[15;33H}[16dstage('Push image on dockerhub') {[17;44Hagent any[18;44Henvironment {[19dDOCKERHUB_LOGIN = credentials('dockerhub_team5')[20;49H}[21;44Hsteps {[39d[K[21d[A[A[20d[21d[22d[23d[25d[27d[28d[29d[31d[32d[34d[35d[36d[38d7[2;39r8[39d[19S[1;41r[2;1H[K[20;53Hsh '''[21;57Hcd ansible[22;57Hansible-playbook -i prod.yml install-docker.yml[23;57Hansible-playbook -i prod.yml student-list.yml[24;53H'''[25;49H}[26;45H}[27;41H}[28;33H}[29;25H}[21d[A[A[20d[21d[23d[25d[26d[28d[29d[31d[A[A[A[A[A[A[26d       	       	       	  [27d[28d[Z[Z	7[28;39r8M[1;41r[1;153H(B[0;7mModified[29;31H(B[m}[K[A7[3;28r8[8S[1;41r[29;39r[29;1H[4T[1;41r[20;81Hstage('test application') {[21;89Hagent { docker { image 'dirane/docker-ansible:latest' } }[22;89Hsteps {[23d	script {[24dsh '''[25d	cd ansible[26;113Hansible-playbook -i prod.yml test.yml[27;107H'''[28;97H}[29;89H}[30;81H}[31;73H}[32;65H}[2;39r[2;1H[4T[1;41r[3;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60H'''[5;57H}[6;49H}[36;66H[3;39r[39;1H[14S[1;41r[22;66H[2;39r[2;1H[4T[1;41r[3;45H}[4dsteps {[5;49Hscript {[6;53Hsh '''[26;66H[2;39r[2;1H[4T[1;41r[3;45Hagent {[4;49Hdocker {[5dimage 'dirane/docker-ansible'[6;49H}[30;66H[2;39r[2;1H[4T[1;41r[3;57H}[4;49H}[5;41H}[6dstage('Ansible deploy') {[34;66H[2;38r[2;1H[4T[1;41r[3;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[5;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[6;60H'''[38;66H7[3;39r8[39d[14S[1;41r[25;31H}[26;25H}[24;66H[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list[centos@localhost student-list]$ nano Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh '''[28;29Hdocker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[6d[9d[12d[15d[18d[21d[24d[27d[39d[K[30d[33d[36d[20;25r[20;1H[3T[1;41r[3;16H[1K	}[4;13H    stage('Run container based on builded image') {[5;17H    agent any[K[6;17H    steps {[K[7;23H[1K script {[K[8;25H[1K sh '''[9;28H[1K docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/stude
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh '''[28;29Hdocker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[6d[9d[12d[15d[18d[21d[24d[27d[39d[K[30d[33d[36d[20;25r[20;1H[3T[1;41r[3;16H[1K	}[4;13H    stage('Run container based on builded image') {[5;17H    agent any[K[6;17H    steps {[K[7;23H[1K script {[K[8;25H[1K sh '''[9;28H[1K docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[10;28H[1K sleep 5[11;25H[1K '''[K[12;21H   }[K[13;21H}[K[14;17H}[K[15;17Hstage('Test image') {[16;21Hagent any[K[17;21Hsteps {[K[18;25Hscript {[K[19;28H sh '''[20d  curl http://172.17.0.1:80/ | grep -q "error"[21;29H'''[22d	}[24;17H}[K[25;32H[1K	stage('Clean Container') {[26;42H[1K agent any[27;42H[1K steps {[28;49H[1K script {[K[29;51H[1K sh '''[30d[1K docker rm -vf ${IMAGE_NAME}[31;51H[1K '''[32;48H[1K	}[33;40H[1K	}[34;32H[1K	}[K[35;33H[1K stage('Push image on dockerhub') {[36;43H[1K agent any[37;43H[1K environment {[38d[1K	DOCKERHUB_LOGIN = credentials('dockerhub_team5')[20d[23d[26d[29d[32d[35d[38d7[2;39r8[39d[19S[1;41r[2;1H[K[20;49H}[21;44Hsteps {[22d script {[23dsh '''[24;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[25;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[26;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[27;60H'''[28;57H}[29;49H}[30;41H}[31dstage('Ansible deploy') {[32;45Hagent {[33;49Hdocker {[34dimage 'dirane/docker-ansible'[35;49H}[36;45H}[37dsteps {[38;49Hscript {[22d[25d[28d[31d[34d[37d[2;39r[39;1H[19S[1;41r[2;1H[K[20;53Hsh '''[21;57Hcd ansible[22;57Hansible-playbook -i prod.yml install-docker.yml[23;57Hansible-playbook -i prod.yml student-list.yml[24;53H'''[25;49H}[26;45H}[27;41H}[28;33H}[29;25H}[21d[24d[27d[24d[27d7[27;39r8M[1;41r[1;153H(B[0;7mModified[28d(B[m[27;39r[39;1H
+[1;41r[27;1H[28d7[28;39r8M[1;41r[29;1H[28;39r[28;1HM[1;41r[30;1H[28;39r[28;1HM[1;41r[31;1H[A[A[A[3;30r[30;1H[8S[1;41r[31;39r[31;1H[4T[1;41r[20;81Hstage('test application') {[21;89Hagent { docker { image 'dirane/docker-ansible:latest' } }[22;89Hsteps {[23d	script {[24dsh '''[25d	cd ansible[26;113Hansible-playbook -i prod.yml test.yml[27;107H'''[28;97H}[29;89H}[30;81H}[31;73H}[32;65H}[2;38r[2;1H[4T[1;41r[3;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60H'''[5;57H}[6;49H}[36;66H[3;39r[39;1H[14S[1;41r[25;33H}[26;25H}[22;66H[2;39r[2;1H[4T[1;41r[3;45H}[4dsteps {[5;49Hscript {[6;53Hsh '''[26;66H[2;39r[2;1H[4T[1;41r[3;45Hagent {[4;49Hdocker {[5dimage 'dirane/docker-ansible'[6;49H}[30;66H[2;39r[2;1H[4T[1;41r[3;57H}[4;49H}[5;41H}[6dstage('Ansible deploy') {[34;66H[2;39r[2;1H[4T[1;41r[3;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[5;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[6;60H'''[38;66H7[3;39r8[39d[14S[1;41r[27;33H}[28;25H}[24;66H[25d[26d[A[26d[30d[A[A[A[A[Astage('test application') {[26;89Hagent { docker { image 'dirane/docker-ansible:latest' } }[27;88H[1K	steps {[28d[1K	script {[29dsh '''[30d	cd ansible[31;113Hansible-playbook -i prod.yml test.yml[32;107H'''[33;97H}[34;89H}[36;33H}[37;25H}[34;90H[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  student-list  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd s[Kstudent-list 
+bash: cd: student-list: Not a directory
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  student-list  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cat student-list 
+pipeline {
+            environment {
+                IMAGE_NAME = "student-list"
+                IMAGE_TAG = "latest"
+                IMAGE_REPO = "filrougeteam5"
+             }
+            agent none
+            stages {
+                stage('Build Image') {
+                    agent any
+                    steps {
+                        script {
+                            sh '''
+                                   echo 'Building..'
+                                   cd simple_api/
+                                   docker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .
+                            '''
+                        }
+                    }
+                }
+                stage('Run container based on builded image') {
+                    agent any
+                    steps {
+                       script {
+                         sh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                            sleep 5
+                         '''
+                       }
+                    }
+                }
+                stage('Test image') {
+                    agent any
+                    steps {
+                        script {
+                            sh '''
+                                    curl http://172.17.0.1:80/ | grep -q "error"
+                            '''
+                                }
+                        }
+                }
+                                stage('Clean Container') {
+                                          agent any
+                                          steps {
+                                                 script {
+                                                   sh '''
+                                                          docker rm -vf ${IMAGE_NAME}
+                                                   '''
+                                                }
+                                        }
+                                }
+                                 stage('Push image on dockerhub') {
+                                           agent any
+                                           environment {
+                                                        DOCKERHUB_LOGIN = credentials('dockerhub_team5')
+                                                }
+                                           steps {
+                                                   script {
+                                                           sh '''
+                                                           docker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           docker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}
+                                                           docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           '''
+                                                        }
+                                                }
+                                        }
+                                         stage('Ansible deploy') {
+                                            agent {
+                                                docker {
+                                                        image 'dirane/docker-ansible'
+                                                } 
+                                            }
+                                            steps {
+                                     [1K agent any[37;43H[1K environment {[38d[1K	DOCKERHUB_LOGIN = credentials('dockerhub_team5')[20d[23d[26d[29d[32d[35d[38d7[2;39r8[39d[19S[1;41r[2;1H[K[20;49H}[21;44Hsteps {[22d script {[23dsh '''[24;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[25;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[26;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[27;60H'''[28;57H}[29;49H}[30;41H}[31dstage('Ansible deploy') {[32;45Hagent {[33;49Hdocker {[34dimage 'dirane/docker-ansible'[35;49H}[36;45H}[37dsteps {[38;49Hscript {[22d[25d[28d[31d[34d[37d[2;39r[39;1H[19S[1;41r[2;1H[K[20;53Hsh '''[21;57Hcd ansible[22;57Hansible-playbook -i prod.yml install-docker.yml[23;57Hansible-playbook -i prod.yml student-list.yml[24;53H'''[25;49H}[26;45H}[27;41H}[28;33H}[29;25H}[21d[24d[27d[24d[27d7[27;39r8M[1;41r[1;153H(B[0;7mModified[28d(B[m[27;39r[39;1H
+[1;41r[27;1H[28d7[28;39r8M[1;41r[29;1H[28;39r[28;1HM[1;41r[30;1H[28;39r[28;1HM[1;41r[31;1H[A[A[A[3;30r[30;1H[8S[1;41r[31;39r[31;1H[4T[1;41r[20;81Hstage('test application') {[21;89Hagent { docker { image 'dirane/docker-ansible:latest' } }[22;89Hsteps {[23d	script {[24dsh '''[25d	cd ansible[26;113Hansible-playbook -i prod.yml test.yml[27;107H'''[28;97H}[29;89H}[30;81H}[31;73H}[32;65H}[2;38r[2;1H[4T[1;41r[3;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60H'''[5;57H}[6;49H}[36;66H[3;39r[39;1H[14S[1;41r[25;33H}[26;25H}[22;66H[2;39r[2;1H[4T[1;41r[3;45H}[4dsteps {[5;49Hscript {[6;53Hsh '''[26;66H[2;39r[2;1H[4T[1;41r[3;45Hagent {[4;49Hdocker {[5dimage 'dirane/docker-ansible'[6;49H}[30;66H[2;39r[2;1H[4T[1;41r[3;57H}[4;49H}[5;41H}[6dstage('Ansible deploy') {[34;66H[2;39r[2;1H[4T[1;41r[3;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[4;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[5;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[6;60H'''[38;66H7[3;39r8[39d[14S[1;41r[27;33H}[28;25H}[24;66H[25d[26d[A[26d[30d[A[A[A[A[Astage('test application') {[26;89Hagent { docker { image 'dirane/docker-ansible:latest' } }[27;88H[1K	steps {[28d[1K	script {[29dsh '''[30d	cd ansible[31;113Hansible-playbook -i prod.yml test.yml[32;107H'''[33;97H}[34;89H}[36;33H}[37;25H}[34;90H[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  student-list  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd s[Kstudent-list 
+bash: cd: student-list: Not a directory
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  student-list  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cat student-list 
+pipeline {
+            environment {
+                IMAGE_NAME = "student-list"
+                IMAGE_TAG = "latest"
+                IMAGE_REPO = "filrougeteam5"
+             }
+            agent none
+            stages {
+                stage('Build Image') {
+                    agent any
+                    steps {
+                        script {
+                            sh '''
+                                   echo 'Building..'
+                                   cd simple_api/
+                                   docker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .
+                            '''
+                        }
+                    }
+                }
+                stage('Run container based on builded image') {
+                    agent any
+                    steps {
+                       script {
+                         sh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                            sleep 5
+                         '''
+                       }
+                    }
+                }
+                stage('Test image') {
+                    agent any
+                    steps {
+                        script {
+                            sh '''
+                                    curl http://172.17.0.1:80/ | grep -q "error"
+                            '''
+                                }
+                        }
+                }
+                                stage('Clean Container') {
+                                          agent any
+                                          steps {
+                                                 script {
+                                                   sh '''
+                                                          docker rm -vf ${IMAGE_NAME}
+                                                   '''
+                                                }
+                                        }
+                                }
+                                 stage('Push image on dockerhub') {
+                                           agent any
+                                           environment {
+                                                        DOCKERHUB_LOGIN = credentials('dockerhub_team5')
+                                                }
+                                           steps {
+                                                   script {
+                                                           sh '''
+                                                           docker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           docker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}
+                                                           docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           '''
+                                                        }
+                                                }
+                                        }
+                                         stage('Ansible deploy') {
+                                            agent {
+                                                docker {
+                                                        image 'dirane/docker-ansible'
+                                                } 
+                                            }
+                                            steps {
+                                                script {
+                                                    sh '''
+                                                        cd ansible
+                                                        ansible-playbook -i prod.yml install-docker.yml
+                                                        ansible-playbook -i prod.yml studentlist.yml
+                                                    '''
+                                                }
+                                            }
+                                        }
+					   stage('test application') {
+					   agent { docker { image 'dirane/docker-ansible:latest' } }
+					   	steps {
+					              script {
+						          sh '''
+							     cd ansible
+							     ansible-playbook -i prod.yml test.yml
+					                   '''
+					    }
+					}
+				}
+                        }
+ }
+        
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cat student-list ls[Kcd student-lisAG} .
+                            '''
+                        }
+                    }
+                }
+                stage('Run container based on builded image') {
+                    agent any
+                    steps {
+                       script {
+                         sh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                            sleep 5
+                         '''
+                       }
+                    }
+                }
+                stage('Test image') {
+                    agent any
+                    steps {
+                        script {
+                            sh '''
+                                    curl http://172.17.0.1:80/ | grep -q "error"
+                            '''
+                                }
+                        }
+                }
+                                stage('Clean Container') {
+                                          agent any
+                                          steps {
+                                                 script {
+                                                   sh '''
+                                                          docker rm -vf ${IMAGE_NAME}
+                                                   '''
+                                                }
+                                        }
+                                }
+                                 stage('Push image on dockerhub') {
+                                           agent any
+                                           environment {
+                                                        DOCKERHUB_LOGIN = credentials('dockerhub_team5')
+                                                }
+                                           steps {
+                                                   script {
+                                                           sh '''
+                                                           docker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           docker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}
+                                                           docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           '''
+                                                        }
+                                                }
+                                        }
+                                         stage('Ansible deploy') {
+                                            agent {
+                                                docker {
+                                                        image 'dirane/docker-ansible'
+                                                } 
+                                            }
+                                            steps {
+                                                script {
+                                                    sh '''
+                                                        cd ansible
+                                                        ansible-playbook -i prod.yml install-docker.yml
+                                                        ansible-playbook -i prod.yml studentlist.yml
+                                                    '''
+                                                }
+                                            }
+                                        }
+					   stage('test application') {
+					   agent { docker { image 'dirane/docker-ansible:latest' } }
+					   	steps {
+					              script {
+						          sh '''
+							     cd ansible
+							     ansible-playbook -i prod.yml test.yml
+					                   '''
+					    }
+					}
+				}
+                        }
+ }
+        
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cat studE_NAME = "student-list"
+                IMAGE_TAG = "latest"
+                IMAGE_REPO = "filrougeteam5"
+             }
+            agent none
+            stages {
+                stage('Build Image') {
+                    agent any
+                    steps {
+                        script {
+                            sh '''
+                                   echo 'Building..'
+                                   cd simple_api/
+                                   docker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .
+                            '''
+                        }
+                    }
+                }
+                stage('Run container based on builded image') {
+                    agent any
+                    steps {
+                       script {
+                         sh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                            sleep 5
+                         '''
+                       }
+                    }
+                }
+                stage('Test image') {
+                    agent any
+                    steps {
+                        script {
+                            sh '''
+                                    curl http://172.17.0.1:80/ | grep -q "error"
+                            '''
+                                }
+                        }
+                }
+                                stage('Clean Container') {
+                                          agent any
+                                          steps {
+                                                 script {
+                                                   sh '''
+                                                          docker rm -vf ${IMAGE_NAME}
+                                                   '''
+                                                }
+                                        }
+                                }
+                                 stage('Push image on dockerhub') {
+                                           agent any
+                                           environment {
+                                                        DOCKERHUB_LOGIN = credentials('dockerhub_team5')
+                                                }
+                                           steps {
+                                                   script {
+                                                           sh '''
+                                                           docker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           docker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}
+                                                           docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           '''
+                                                        }
+                                                }
+                                        }
+                                         stage('Ansible deploy') {
+                                            agent {
+                                                docker {
+                                                        image 'dirane/docker-ansible'
+                                                } 
+                                            }
+                                            steps {
+                                                script {
+                                                    sh '''
+                                                        cd ansible
+                                                        ansible-playbook -i prod.yml install-docker.yml
+                                                        ansible-playbook -i prod.yml studentlist.yml
+                                                    '''
+                               

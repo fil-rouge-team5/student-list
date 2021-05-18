@@ -48,7 +48,7 @@ pipeline {
                                                 }
                                         }
                                 }
-                                 stage('Push image on dockerhub') {
+                                 stage('Push image on docker private registry') {
                                            agent any
                                            environment {
                                                         DOCKERHUB_LOGIN = credentials('dockerhub_team5')
@@ -56,9 +56,9 @@ pipeline {
                                            steps {
                                                    script {
                                                            sh '''
-                                                           docker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           docker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} localhost:5007/${IMAGE_NAME}:${IMAGE_TAG}
                                                            docker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}
-                                                           docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           docker push localhost:5007/${IMAGE_NAME}:${IMAGE_TAG}
                                                            '''
                                                         }
                                                 }
