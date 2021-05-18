@@ -1,0 +1,40 @@
+--- 
+- 
+  become: true
+  hosts: prod
+  name: "front and back-end installation"
+  tasks: 
+    - 
+      file: 
+        path: /home/centos/student-list/
+        state: absent
+      name: "Clean Folder"
+    - 
+      copy: 
+        dest: /home/centos/student-list/
+        src: ../
+      name: "Copy of the file file with owner and permissions"
+    - 
+      docker_container: 
+        env: 
+          PASSWORD: python
+          USERNAME: toto
+        image: "php:7.2-apache"
+        name: website
+        ports: "70:80"
+        networks:
+          - name: "{{ docker_network_name }}"
+        volumes: 
+          - "/home/centos/student-list/website:/var/www/html"
+      name: "Create front-end containers"
+    - 
+      docker_container: 
+        image: filrougeteam5/student-list
+        name: apibackend
+        ports: "85:5000"
+        networks:
+          - name: "{{ docker_network_name }}"
+        volumes: 
+          - "/home/centos/student-list/simple_api/student_age.json:/data/student_age.json"
+  vars: 
+    ansible_python_interpreter: /usr/bin/python3
