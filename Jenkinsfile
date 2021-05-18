@@ -23,8 +23,7 @@ pipeline {
                     steps {
                        script {
                          sh '''
-                            docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json 
-${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
                             sleep 5
                          '''
                        }
