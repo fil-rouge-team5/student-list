@@ -5826,16 +5826,277 @@ Everything up-to-date
 ]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
 [0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
 ]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B "modified Jenkinsfile"
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[A[2;38r[2;1HM[1;41r[1;153H(B[0;7mModified[4d(B[m[A#deploiement of	t stu[39d[K[3;22Hdd ent-list[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 86 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git [K[K[K[Kcd ..
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
 # On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ansible/Jenkinsfile
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
+Reinitialized existing Git repository in /home/centos/student-list/.git/
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git [K[K[K[Kgit initstatus
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ansible/Jenkinsfile
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add *
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add *status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   ansible/Jenkinsfile
+#	modified:   {
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git reset HEAD ansible/Jenkinsfile
+Unstaged changes after reset:
+M	ansible/Jenkinsfile
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git reset HEAD ansible/Jenkinsfilestatus[K
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ansible/Jenkinsfile
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git statusreset HEAD ansible/Jenkinsfile[C[C[C[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfileaJenkinsfiledJenkinsfiledJenkinsfile Jenkinsfile
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add Jenkinsfile[9Pstatus
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ansible/Jenkinsfile
+#	modified:   {
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   ../{
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   Jenkinsfile
+#	modified:   ../{
+#
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git reset HEAD Jenkinsfile
+Unstaged changes after reset:
+M	ansible/Jenkinsfile
+M	{
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git reset HEAD Jenkinsfilestatus[K
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   ../{
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   Jenkinsfile
+#	modified:   ../{
+#
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git statusreset HEAD Jenkinsfilestatus[Kreset HEAD Jenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfile[1PJenkinsfilecJenkinsfilehJenkinsfileeJenkinsfilecJenkinsfilekJenkinsfileoJenkinsfileuJenkinsfiletJenkinsfile Jenkinsfile
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ l[Kgit checkout Jenkinsfilestatus[Kreset HEAD Jenkinsfilestatus[Kls[Kgit status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   ../{
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
+#
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ cd ..
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git n[Kinit
+Reinitialized existing Git repository in /home/centos/student-list/.git/
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   {
+#
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
 #	modified:   {
 #
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "modified Jenkinsfile"[16Padd Jenkinsfile [10Pstatusbranch[5Pcd ..git checkout -- file Jenkinsfile ommit -m "modified Jenkinsfile"[3Pheckout -- file Jenkinsfile [1P[1P[1P[1P[1P
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ vi README.md 
+[?1049h[?1h=[1;41r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[41;1H"README.md" 181L, 7123C[1;1H# student-list
+This repo is a simple application to list student with a webserver (PHP) and API (Flask)
+
+![project](https://user-images.githubusercontent.com/18481009/84582395-ba230b00-adeb-11ea-9453-22ed1be7e268.jpg)
+
+
+------------
+
+
+## Objectives
+
+The objectives of this practice exam are to ensure that you are able to manage a docker infrastructure, so you will be evaluated about the following
+
+### Themes:
+
+- improve an existed application deployment process
+- versioning your infrastructure release
+- address best practice when implementing docker infrastructure
+- Infrastructure As Code
+
+## Context
+
+
+*POZOS*  is an IT company located in France and develops software for High School.
+
+The innovation department want to disrupt the existing infrastructure to ensure that
+
+it can be scalable, easily deployed with a maximum of automation.
+
+POZOS wants you to build a **POC** to show how docker can help you and how much this technology is efficient.
+
+For this POC, POZOS will give you an application and want you to build a "decouple" infrastructure based on **Docker**.
+
+Currently, the application is running on a single server with any scalability and any high availability.
+
+When POZOS needs to deploy a new release, every time some goes wrong.
+
+In conclusion, POZOS needs agility on its software farm.
+
+## Infrastructure[1;1H[?12l[?25h[?25l[41;1H[K[41;1H:[?12l[?25hq![?25l[41;1H[K[41;1H[?1l>[?12l[?25h[?1049l]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push orin[Kgin [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nano D[K[K j[Kj[KJenkinsfile 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[3;38r[38;1H
+[1;41r[1;153H(B[0;7mModified[38;37H(B[mcurl http://172.17.0.1:80/ | grep -q "error"[3d[3;38r[38;1H
+[1;41r[38;29H'''[3d[3;38r[38;1H[2S[1;41r[37;33H}[38;25H}[3d[3;38r[38;1H
+[1;41r[38;17H}[3d[3;38r[38;1H
+[1;41r[38;33Hstage('Clean Container') {[3d[2;38r[38;1H[2S[1;41r[2;1H[K[37;43Hagent any[38;43Hsteps {[3d[3;38r[38;1H
+[1;41r[38;50Hscript {[3d[3;38r[38;1H
+[1;41r[38;52Hsh '''[3d[3;38r[38;1H
+[1;41r[38;59Hdocker rm -vf ${IMAGE_NAME}[3d[3;38r[38;1H[2S[1;41r[37;52H'''[38;49H}[3d[3;38r[38;1H
+[1;41r[38;41H}[3d[3;38r[38;1H
+[1;41r[38;33H}[3d[3;38r[38;1H[2S[1;41r[37;34Hstage('Push image on dockerhub') {[38;44Hagent any[3d[3;38r[38;1H
+[1;41r[38;44Henvironment {[3d[2;38r[38;1H[2S[1;41r[2;1H[K[37;57HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[38;49H}[3d[3;38r[38;1H
+[1;41r[38;44Hsteps {[3d[3;38r[38;1H
+[1;41r[38;52Hscript {[3d[3;38r[38;1H[2S[1;41r[37;60Hsh '''[38;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[3d[3;38r[38;1H
+[1;41r[38;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[3d[3;39r[39;1H
+[1;41r[38;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[3d[3;39r[39;1H[2S[1;41r[37;60H'''[38;57H}[3d[3;39r[39;1H
+[1;41r[38;49H}[3d[3;39r[39;1H[2S[1;41r[37;41H}[38dstage('Ansible deploy') {[3d[3;39r[39;1H
+[1;41r[38;45Hagent {[3d[3;39r[39;1H
+[1;41r[38;49Hdocker {[3d[3;39r[39;1H[2S[1;41r[37;57Himage 'dirane/docker-ansible'[38;49H}[3d[3;39r[39;1H
+[1;41r[38;45H}[3d[3;39r[39;1H[2S[1;41r[37;45Hsteps {[38;49Hscript {[3d[3;39r[39;1H
+[1;41r[38;53Hsh '''[3d[3;39r[39;1H
+[1;41r[38;57Hcd ansible[3d[3;39r[39;1H
+[1;41r[38;57Hansible-playbook -i prod.yml install-docker.yml[3d[3;39r[39;1H
+[1;41r[38;57Hansible-playbook -i prod.yml studentlist.yml[3d[3;39r[39;1H
+[1;41r[38;53H'''[3d[3;39r[39;1H[2S[1;41r[37;49H}[38;45H}[3d[3;39r[39;1H
+[1;41r[38;41H}[3d[3;39r[39;1H
+[1;41r[38;33H}[3d[3;39r[39;1H[2S[1;41r[37;25H}[3d[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[2;39r[39;1H[2S[1;41r[2;1H[K[3d[K[3;57HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[4;49H}[5;44Hsteps {[6d script {[7dsh '''[8;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[9;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[10;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[11;60H'''[12;57H}[13;49H}[14;41H}[15dstage('Ansible deploy') {[16;45Hagent {[17;49Hdocker {[18dimage 'dirane/docker-ansible'[19;49H}[20;45H}[21dsteps {[22;49Hscript {[23;53Hsh '''[24;57Hcd ansible[25;57Hansible-playbook -i prod.yml install-docker.yml[26;57Hansible-playbook -i prod.yml studentlist.yml[27;53H'''[28;49H}[29;45H}[30;41H}[31;33H}[32;25H}[33;9H[30d[27d[24d[21d[18d[15d[12d[9d[6d[3d[2;38r[2;1H[19T[1;41r[3;29Hsh '''[4d  curl http://172.17.0.1:80/ | grep -q "error"[5;29H'''[6d	}[7;25H}[8;17H}[9;33Hstage('Clean Container') {[10;43Hagent any[11;43Hsteps {[12dscript {[13;52Hsh '''[14d docker rm -vf ${IMAGE_NAME}[15;52H'''[16;49H}[17;41H}[18;33H}[19dstage('Push image on dockerhub') {[20;44Hagent any[21;44Henvironment {[19;9H[16d[13d[7d[4d[2;39r[2;1H[19T[1;41r[3;29H'''[4;25H}[5;21H}[6;17H}[7;17Hstage('Run container based on builded image') {[8;21Hagent any[9;21Hsteps {[10;24Hscript {[11;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[12d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[13;29Hsleep 5[14;26H'''[15;24H}[16;21H}[17;17H}[18;17Hstage('Test image') {[19;21Hagent any[20;21Hsteps {[21;25Hscript {[39d[K[20;9H[17d[14d[11d[8d[2;38r[2;1H[16T[1;41r[3;1Hpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[18;9H[15d[12d[9d[3d[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 85 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ cd ..
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   ../{
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
+#
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git add j[KJenkinsfile 
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git commit -m "j[Kmoidi[K[K[Kdification du Jenkinsfile"
+[ansible 81db053] modification du Jenkinsfile
+ 1 file changed, 727 insertions(+), 267 deletions(-)
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git push origin ansible
+Password for 'https://fil-rouge-team5@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 10.95 KiB | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://fil-rouge-team5@github.com//fil-rouge-team5/student-list.git
+   a87ce0e..81db053  ansible -> ansible
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ cd ..
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
 # On branch ansible
 # Changes not staged for commit:
@@ -5845,27 +6106,50 @@ no changes added to commit (use "git add" and/or "git commit -a")
 #	modified:   {
 #
 no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"
-fatal: Paths with -a does not make sense.
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"[1P "Jenkins"m "Jenkins"
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add Jenkinsfile 
+]0;centos@localhost:~/student-list[centos@l11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[18;9H[15d[12d[9d[3d[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 85 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ cd ..
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
 # On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   {
+#
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
 #	modified:   {
 #
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin ansible/[K
-Password for 'https://fil-rouge-team5@github.com': 
-Everything up-to-date
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ d[Kls
-{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
-[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[A[2;38r[2;1HM[1;41r[1;153H(B[0;7mModified[4d(B[m[A#deploiement of	t stu[39d[K[3;22Hdd ent-list[39d(B[0;7mSave modified buffer [3Pheckout -- file Jenkinsfile [1P[1P[1P[1P[1P
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   ../{
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
+#
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git add j[KJenkinsfile 
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git commit -m "j[Kmoidi[K[K[Kdification du Jenkinsfile"
+[ansible 81db053] modification du Jenkinsfile
+ 1 file changed, 727 insertions(+), 267 deletions(-)
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git push origin ansible
+Password for 'https://fil-rouge-team5@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 10.95 KiB | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://fil-rouge-team5@github.com//fil-rouge-team5/student-list.git
+   a87ce0e..81db053  ansible -> ansible
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ cd ..
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
 # On branch ansible
 # Changes not staged for commit:
@@ -5875,9 +6159,8 @@ Everything up-to-date
 #	modified:   {
 #
 no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"
-fatal: Paths with -a does not make sense.
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"[1P "Jenkins"m "Jenkins"
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add Jenkinsfile 
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "add Jenkinsfile"
 # On branch ansible
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
@@ -5886,16 +6169,104 @@ fatal: Paths with -a does not make sense.
 #	modified:   {
 #
 no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin ansible/[K
-Password for 'https://fil-rouge-team5@github.com': 
-Everything up-to-date
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ d[Kls
-{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[[38;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[3d[3;39r[39;1H[2S[1;41r[37;60H'''[38;57H}[3d[3;39r[39;1H
+[1;41r[38;49H}[3d[3;39r[39;1H[2S[1;41r[37;41H}[38dstage('Ansible deploy') {[3d[3;39r[39;1H
+[1;41r[38;45Hagent {[3d[3;39r[39;1H
+[1;41r[38;49Hdocker {[3d[3;39r[39;1H[2S[1;41r[37;57Himage 'dirane/docker-ansible'[38;49H}[3d[3;39r[39;1H
+[1;41r[38;45H}[3d[3;39r[39;1H[2S[1;41r[37;45Hsteps {[38;49Hscript {[3d[3;39r[39;1H
+[1;41r[38;53Hsh '''[3d[3;39r[39;1H
+[1;41r[38;57Hcd ansible[3d[3;39r[39;1H
+[1;41r[38;57Hansible-playbook -i prod.yml install-docker.yml[3d[3;39r[39;1H
+[1;41r[38;57Hansible-playbook -i prod.yml studentlist.yml[3d[3;39r[39;1H
+[1;41r[38;53H'''[3d[3;39r[39;1H[2S[1;41r[37;49H}[38;45H}[3d[3;39r[39;1H
+[1;41r[38;41H}[3d[3;39r[39;1H
+[1;41r[38;33H}[3d[3;39r[39;1H[2S[1;41r[37;25H}[3d[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[2;39r[39;1H[2S[1;41r[2;1H[K[3d[K[3;57HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[4;49H}[5;44Hsteps {[6d script {[7dsh '''[8;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[9;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[10;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[11;60H'''[12;57H}[13;49H}[14;41H}[15dstage('Ansible deploy') {[16;45Hagent {[17;49Hdocker {[18dimage 'dirane/docker-ansible'[19;49H}[20;45H}[21dsteps {[22;49Hscript {[23;53Hsh '''[24;57Hcd ansible[25;57Hansible-playbook -i prod.yml install-docker.yml[26;57Hansible-playbook -i prod.yml studentlist.yml[27;53H'''[28;49H}[29;45H}[30;41H}[31;33H}[32;25H}[33;9H[30d[27d[24d[21d[18d[15d[12d[9d[6d[3d[2;38r[2;1H[19T[1;41r[3;29Hsh '''[4d  curl http://172.17.0.1:80/ | grep -q "error"[5;29H'''[6d	}[7;25H}[8;17H}[9;33Hstage('Clean Container') {[10;43Hagent any[11;43Hsteps {[12dscript {[13;52Hsh '''[14d docker rm -vf ${IMAGE_NAME}[15;52H'''[16;49H}[17;41H}[18;33H}[19dstage('Push image on dockerhub') {[20;44Hagent any[21;44Henvironment {[19;9H[16d[13d[7d[4d[2;39r[2;1H[19T[1;41r[3;29H'''[4;25H}[5;21H}[6;17H}[7;17Hstage('Run container based on builded image') {[8;21Hagent any[9;21Hsteps {[10;24Hscript {[11;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[12d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[13;29Hsleep 5[14;26H'''[15;24H}[16;21H}[17;17H}[18;17Hstage('Test image') {[19;21Hagent any[20;21Hsteps {[21;25Hscript {[39d[K[20;9H[17d[14d[11d[8d[2;38r[2;1H[16T[1;41r[3;1Hpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[18;9H[15d[12d[9d[3d[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;4Hagent any[3d[3;38r[38;1H
+[1;41r[38;44Henvironment {[3d[2;38r[38;1H[2S[1;41r[2;1H[K[37;57HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[38;49H}[3d[3;38r[38;1H
+[1;41r[38;44Hsteps {[3d[3;38r[38;1H
+[1;41r[38;52Hscript {[3d[3;38r[38;1H[2S[1;41r[37;60Hsh '''[38;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[3d[3;38r[38;1H
+[1;41r[38;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[3d[3;39r[39;1H
+[1;41r[38;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[3d[3;39r[39;1H[2S[1;41r[37;60H'''[38;57H}[3d[3;39r[39;1H
+[1;41r[38;49H}[3d[3;39r[39;1H[2S[1;41r[37;41H}[38dstage('Ansible deploy') {[3d[3;39r[39;1H
+[1;41r[38;45Hagent {[3d[3;39r[39;1H
+[1;41r[38;49Hdocker {[3d[3;39r[39;1H[2S[1;41r[37;57Himage 'dirane/docker-ansible'[38;49H}[3d[3;39r[39;1H
+[1;41r[38;45H}[3d[3;39r[39;1H[2S[1;41r[37;45Hsteps {[38;49Hscript {[3d[3;39r[39;1H
+[1;41r[38;53Hsh '''[3d[3;39r[39;1H
+[1;41r[38;57Hcd ansible[3d[3;39r[39;1H
+[1;41r[38;57Hansible-playbook -i prod.yml install-docker.yml[3d[3;39r[39;1H
+[1;41r[38;57Hansible-playbook -i prod.yml studentlist.yml[3d[3;39r[39;1H
+[1;41r[38;53H'''[3d[3;39r[39;1H[2S[1;41r[37;49H}[38;45H}[3d[3;39r[39;1H
+[1;41r[38;41H}[3d[3;39r[39;1H
+[1;41r[38;33H}[3d[3;39r[39;1H[2S[1;41r[37;25H}[3d[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[2;39r[39;1H[2S[1;41r[2;1H[K[3d[K[3;57HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[4;49H}[5;44Hsteps {[6d script {[7dsh '''[8;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[9;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[10;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[11;60H'''[12;57H}[13;49H}[14;41H}[15dstage('Ansible deploy') {[16;45Hagent {[17;49Hdocker {[18dimage 'dirane/docker-ansible'[19;49H}[20;45H}[21dsteps {[22;49Hscript {[23;53Hsh '''[24;57Hcd ansible[25;57Hansible-playbook -i prod.yml install-docker.yml[26;57Hansible-playbook -i prod.yml studentlist.yml[27;53H'''[28;49H}[29;45H}[30;41H}[31;33H}[32;25H}[33;9H[30d[27d[24d[21d[18d[15d[12d[9d[6d[3d[2;38r[2;1H[19T[1;41r[3;29Hsh '''[4d  curl http://172.17.0.1:80/ | grep -q "error"[5;29H'''[6d	}[7;25H}[8;17H}[9;33Hstage('Clean Container') {[10;43Hagent any[11;43Hsteps {[12dscript {[13;52Hsh '''[14d docker rm -vf ${IMAGE_NAME}[15;52H'''[16;49H}[17;41H}[18;33H}[19dstage('Push image on dockerhub') {[20;44Hagent any[21;44Henvironment {[19;9H[16d[13d[7d[4d[2;39r[2;1H[19T[1;41r[3;29H'''[4;25H}[5;21H}[6;17H}[7;17Hstage('Run container based on builded image') {[8;21Hagent any[9;21Hsteps {[10;24Hscript {[11;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[12d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[13;29Hsleep 5[14;26H'''[15;24H}[16;21H}[17;17H}[18;17Hstage('Test image') {[19;21Hagent any[20;21Hsteps {[21;25Hscript {[39d[K[20;9H[17d[14d[11d[8d[2;38r[2;1H[16T[1;41r[3;1Hpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[18;9H[15d[12d[9d[3d[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 85 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ cd ..
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
-[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[A[2;38r[2;1HM[1;41r[1;153H(B[0;7mModified[4d(B[m[A#deploiement of	t stu[39d[K[3;22Hdd ent-list[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 86 ommit -m "modified Jenkinsfile"[3Pheckout -- file Jenkinsfile [1P[1P[1P[1P[1P
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   ../{
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
+#
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git add j[KJenkinsfile 
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git commit -m "j[Kmoidi[K[K[Kdification du Jenkinsfile"
+[ansible 81db053] modification du Jenkinsfile
+ 1 file changed, 727 insertions(+), 267 deletions(-)
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git push origin ansible
+Password for 'https://fil-rouge-team5@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 10.95 KiB | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://fil-rouge-team5@github.com//fil-rouge-team5/student-list.git
+   a87ce0e..81db053  ansible -> ansible
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ cd ..
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
 # On branch ansible
 # Changes not staged for commit:
@@ -5905,9 +6276,8 @@ Everything up-to-date
 #	modified:   {
 #
 no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"
-fatal: Paths with -a does not make sense.
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"[1P "Jenkins"m "Jenkins"
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add Jenkinsfile 
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "add Jenkinsfile"
 # On branch ansible
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
@@ -5916,50 +6286,4 @@ fatal: Paths with -a does not make sense.
 #	modified:   {
 #
 no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin ansible/[K
-Password for 'https://fil-rouge-team5@github.com': 
-Everything up-to-date
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ d[Kls
-{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
-[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[A[2;38r[2;1HM[1;41r[1;153H(B[0;7mModified[4d(B[m[A#deploiement of	t stu[39d[K[3;22Hdd ent-list[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7mtaged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	modified:   {
-#
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "modified Jenkinsfile"[16Padd Jenkinsfile [10Pstatusbranch[5Pcd ..git checkout -- file Jenkinsfile ommit -m "modified Jenkinsfile"[3Pheckout -- file Jenkinsfile [1P[1P[1P[1P[1P
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
-# On branch ansible
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	modified:   {
-#
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"
-fatal: Paths with -a does not make sense.
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"[1P "Jenkins"m "Jenkins"
-# On branch ansible
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	modified:   {
-#
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin ansible/[K
-Password for 'https://fil-rouge-team5@github.com': 
-Everything up-to-date
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ d[Kls
-{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
-[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[A[2;38r[2;1HM[1;41r[1;153H(B[0;7mModified[4d(B[m[A#deploiement of	t stu[39d[K[3;22Hdd ent-list[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                      
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ g[Kgit[K[K[Kgit push 
