@@ -14,7 +14,7 @@
         path: "/home/centos/student-list/"
         state: absent
 
-    - name: example copying file with owner and permissions
+    - name: "example copying file with owner and permissions"
       copy:
         src: ../
         dest: /home/centos/student-list/
