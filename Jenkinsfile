@@ -75,7 +75,7 @@ pipeline {
 								script {
 									sh '''
 										yamllint --version
-										yamllint /home/centos/student-list/ansible
+										yamllint \${WORKSPACE}/student-list/ansible
 									'''
 								}
 							}
