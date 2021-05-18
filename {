@@ -5049,42 +5049,6 @@ PLAY RECAP *********************************************************************
 
 ]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ sudo nano /etc/docker/daemon.json
 [sudo] password for centos: 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                     File: /etc/docker/daemon.json                                                                                [39;76H[ New File ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[1;153H(B[0;7mModified[3d(B[m{[4d "storage-driver": "overlay"[5d}[39d[K[5d}[A "stor	ge-dri	r": "ov	rlay"[K"[K"[K[Z"[K[Z"[K"[K"[K192.168.31.132""[K"[K4"0":"5"0"00"000"[Z[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: /etc/docker/daemon.json                 [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;44H[4"compatibility" to "no_defaults" in community.docker 2.0.0. To [0m
-[0;35mremove this warning, please specify an explicit value for it now. This feature will be removed from community.docker in version 2.0.0. Deprecation warnings can [0m
-[0;35mbe disabled by setting deprecation_warnings=False in ansible.cfg.[0m
-[0;35m[DEPRECATION WARNING]: Please note that the default value for `network_mode` will change from not specified (which is equal to `default`) to the name of the [0m
-[0;35mfirst network in `networks` if `networks` has at least one entry and `networks_cli_compatible` is `true`. You can change the behavior now by explicitly setting [0m
-[0;35m`network_mode` to the name of the first network in `networks`, and remove this warning by setting `network_mode` to `default`. Please make sure that the value [0m
-[0;35myou set to `network_mode` equals the inspection result for existing containers, otherwise the module will recreate them. You can find out the correct value by [0m
-[0;35mrunning "docker inspect --format '{{.HostConfig.NetworkMode}}' <container_name>". This feature will be removed from community.docker in version 2.0.0. [0m
-[0;35mDeprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
-[0;33mchanged: [client][0m
-
-TASK [Create api containers] *************************************************************************************************************************************
-[0;31mfatal: [client]: FAILED! => {"changed": false, "msg": "Error pulling image localhost:5007/student-list:local0 - 500 Server Error: Internal Server Error (\"b'{\"message\":\"Get http://localhost:5007/v2/: dial tcp [::1]:5007: connect: connection refused\"}'\")"}[0m
-
-PLAY RECAP *******************************************************************************************************************************************************
-[0;31mclient[0m                     : [0;32mok=5   [0m [0;33mchanged=3   [0m unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
-
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ sudo nano /etc/docker/daemon.json
-[sudo] password for centos: 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                     File: /etc/docker/daemon.json                                                                                [39;76H[ New File ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[1;153H(B[0;7mModified[3d(B[m{[4d "storage-driver": "overlay"[5d}[39d[K[5d}[A "stor	ge-dri	r": "ov	rlay"[K"[K"[K[Z"[K[Z"[K"[K"[K192.168.31.132""[K"[K4"0":"5"0"00"000"[Z[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: /etc/docker/daemon.json                 [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;44H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 3 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ g[Kcd ..[K[K[K[K[Kcd ..
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
-{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.micitly setting [0m
-[0;35m`network_mode` to the name of the first network in `networks`, and remove this warning by setting `network_mode` to `default`. Please make sure that the value [0m
-[0;35myou set to `network_mode` equals the inspection result for existing containers, otherwise the module will recreate them. You can find out the correct value by [0m
-[0;35mrunning "docker inspect --format '{{.HostConfig.NetworkMode}}' <container_name>". This feature will be removed from community.docker in version 2.0.0. [0m
-[0;35mDeprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
-[0;33mchanged: [client][0m
-
-TASK [Create api containers] *************************************************************************************************************************************
-[0;31mfatal: [client]: FAILED! => {"changed": false, "msg": "Error pulling image localhost:5007/student-list:local0 - 500 Server Error: Internal Server Error (\"b'{\"message\":\"Get http://localhost:5007/v2/: dial tcp [::1]:5007: connect: connection refused\"}'\")"}[0m
-
-PLAY RECAP *******************************************************************************************************************************************************
-[0;31mclient[0m                     : [0;32mok=5   [0m [0;33mchanged=3   [0m unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
-
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ sudo nano /etc/docker/daemon.json
-[sudo] password for centos: 
 [?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                     File: /etc/docker/daemon.json                                                                                [39;76H[ New File ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[1;153H(B[0;7mModified[3d(B[m{[4d "storage-driver": "overlay"[5d}[39d[K[5d}[A "stor	ge-dri	r": "ov	rlay"[K"[K"[K[Z"[K[Z"[K"[K"[K192.168.31.132""[K"[K4"0":"5"0"00"000"[Z[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: /etc/docker/daemon.json                 [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;44H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 3 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ g[Kcd ..[K[K[K[K[Kcd ..
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
 {  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
@@ -5103,24 +5067,75 @@ Switched to a new branch 'ansible'
 #   (use "git add/rm <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	deleted:  `true`. You can change the behavior now by explicitly setting [0m
-[0;35m`network_mode` to the name of the first network in `networks`, and remove this warning by setting `network_mode` to `default`. Please make sure that the value [0m
-[0;35myou set to `network_mode` equals the inspection result for existing containers, otherwise the module will recreate them. You can find out the correct value by [0m
-[0;35mrunning "docker inspect --format '{{.HostConfig.NetworkMode}}' <container_name>". This feature will be removed from community.docker in version 2.0.0. [0m
-[0;35mDeprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
-[0;33mchanged: [client][0m
+#	deleted:    ansible/front-back.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	ansible/student-list.yml
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .[K*
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
 
-TASK [Create api containers] *************************************************************************************************************************************
-[0;31mfatal: [client]: FAILED! => {"changed": false, "msg": "Error pulling image localhost:5007/student-list:local0 - 500 Server Error: Internal Server Error (\"b'{\"message\":\"Get http://localhost:5007/v2/: dial tcp [::1]:5007: connect: connection refused\"}'\")"}[0m
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
 
-PLAY RECAP *******************************************************************************************************************************************************
-[0;31mclient[0m                     : [0;32mok=5   [0m [0;33mchanged=3   [0m unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
+* 'git add --all <pathspec>' will let you also record the removals.
 
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ sudo nano /etc/docker/daemon.json
-[sudo] password for centos: 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                     File: /etc/docker/daemon.json                                                                                [39;76H[ New File ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[1;153H(B[0;7mModified[3d(B[m{[4d "storage-driver": "overlay"[5d}[39d[K[5d}[A "stor	ge-dri	r": "ov	rlay"[K"[K"[K[Z"[K[Z"[K"[K"[K192.168.31.132""[K"[K4"0":"5"0"00"000"[Z[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: /etc/docker/daemon.json                 [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;44H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 3 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ g[Kcd ..[K[K[K[K[Kcd ..
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
-{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
+Reinitialized existing Git repository in /home/centos/student-list/.git/
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   ansible/student-list.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    ansible/front-back.yml
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
+[ansible 46a7273] ansible file
+ 4 files changed, 741 insertions(+), 246 deletions(-)d  [01;34msimple_api[0m  [01;34mwebsite[0m
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ git checkout -b ansible
 D	ansible/front-back.yml
 M	website/index.php
@@ -5134,26 +5149,357 @@ Switched to a new branch 'ansible'
 # On branch ansible
 # Changes not staged for commit:
 #   (use "git add/rm <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discardo [0m
-[0;35mremove this warning, please specify an explicit value for it now. This feature will be removed from community.docker in version 2.0.0. Deprecation warnings can [0m
-[0;35mbe disabled by setting deprecation_warnings=False in ansible.cfg.[0m
-[0;35m[DEPRECATION WARNING]: Please note that the default value for `network_mode` will change from not specified (which is equal to `default`) to the name of the [0m
-[0;35mfirst network in `networks` if `networks` has at least one entry and `networks_cli_compatible` is `true`. You can change the behavior now by explicitly setting [0m
-[0;35m`network_mode` to the name of the first network in `networks`, and remove this warning by setting `network_mode` to `default`. Please make sure that the value [0m
-[0;35myou set to `network_mode` equals the inspection result for existing containers, otherwise the module will recreate them. You can find out the correct value by [0m
-[0;35mrunning "docker inspect --format '{{.HostConfig.NetworkMode}}' <container_name>". This feature will be removed from community.docker in version 2.0.0. [0m
-[0;35mDeprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
-[0;33mchanged: [client][0m
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    ansible/front-back.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	ansible/student-list.yml
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .[K*
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
 
-TASK [Create api containers] *************************************************************************************************************************************
-[0;31mfatal: [client]: FAILED! => {"changed": false, "msg": "Error pulling image localhost:5007/student-list:local0 - 500 Server Error: Internal Server Error (\"b'{\"message\":\"Get http://localhost:5007/v2/: dial tcp [::1]:5007: connect: connection refused\"}'\")"}[0m
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
 
-PLAY RECAP *******************************************************************************************************************************************************
-[0;31mclient[0m                     : [0;32mok=5   [0m [0;33mchanged=3   [0m unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
+* 'git add --all <pathspec>' will let you also record the removals.
 
-]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ sudo nano /etc/docker/daemon.json
-[sudo] password for centos: 
-[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                     File: /etc/docker/daemon.json                                                                                [39;76H[ New File ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[1;153H(B[0;7mModified[3d(B[m{[4d "storage-driver": "overlay"[5d}[39d[K[5d}[A "stor	ge-dri	r": "ov	rlay"[K"[K"[K[Z"[K[Z"[K"[K"[K192.168.31.132""[K"[K4"0":"5"0"00"000"[Z[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: /etc/docker/daemon.json                 [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;44H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 3 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ g[Kcd ..[K[K[K[K[Kcd ..
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
-{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
-]0;centos@lo
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
+Reinitialized existing Git repository in /home/centos/student-list/.git/
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   ansible/student-list.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    ansible/front-back.yml
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
+[ansible 46a7273] ansible file
+ 4 files changed, 741 insertions(+), 246 deletions(-)
+ delete mode 100644 ansible/front-back.yml
+ create mode 100644 ansible/student-list.yml
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin main
+Password for 'https://fil-rouge-team5@github.com': 
+Everything up-to-date
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git branch
+* ansible
+  main
+  master
+]0;centos@loc  ansible/front-back.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	ansible/student-list.yml
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .[K*
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
+Reinitialized existing Git repository in /home/centos/student-list/.git/
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   ansible/student-list.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    ansible/front-back.yml
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
+[ansible 46a7273] ansible file
+ 4 files changed, 741 insertions(+), 246 deletions(-)
+ delete mode 100644 ansible/front-back.yml
+ create mode 100644 ansible/student-list.yml
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin main
+Password for 'https://fil-rouge-team5@github.com': 
+Everything up-to-date
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git branch
+* ansible
+  main
+  master
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git [K[K[K[Kecho "ansible" >> README.md .MD
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ GIT STAT[K[K[K[K[K[K[K[Kgit status
+# On branch ansible
+# Changes not staged  changes in working directory)
+#
+#	deleted:    ansible/front-back.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	ansible/student-list.yml
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .[K*
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
+Reinitialized existing Git repository in /home/centos/student-list/.git/
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   ansible/student-list.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    ansible/front-back.yml
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
+[ansible 46a7273] ansible file
+ 4 files changed, 741 insertions(+), 246 deletions(-)
+ delete mode 100644 ansible/front-back.yml
+ create mode 100644 ansible/student-list.yml
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin main
+Password for 'https://fil-rouge-team5@github.com': 
+Everything up-to-date
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git branch
+* ansible
+  main
+  master
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git [K[K[K[Kecho "ansible" >> README.md .MD
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ GIT STAT[K[K[K[K[K[K[K[Kgit stacalhost:~/student-list[centos@localhost student-list]$ git checkout -b ansible
+D	ansible/front-back.yml
+M	website/index.php
+M	{
+Switched to a new branch 'ansible'
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git brancj[Kh
+* ansible
+  main
+  master
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    ansible/front-back.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	ansible/student-list.yml
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .[K*
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
+Reinitialized existing Git repository in /home/centos/student-list/.git/
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   ansible/student-list.yml
+#	modified:   website/index.php
+#	modified:   {
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    ansible/front-back.yml
+#
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'ansible/front-back.yml' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
+[ansible 46a7273] ansible file
+ 4 files changed, 741 insertions(+), 246 deletions(-)
+ delete mode 100644 ansible/front-back.yml
+ create mode 100644 ansible/student-list.yml
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin main
+Password for 'https://fil-rouge-team5@github.com': 
+Everything up-to-date
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git branch
+* ansible
+  main
+  master
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git st
