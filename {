@@ -5135,168 +5135,6 @@ Run 'git status' to check the paths you removed from your working tree.
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
 [ansible 46a7273] ansible file
- 4 files changed, 741 insertions(+), 246 deletions(-)d  [01;34msimple_api[0m  [01;34mwebsite[0m
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git checkout -b ansible
-D	ansible/front-back.yml
-M	website/index.php
-M	{
-Switched to a new branch 'ansible'
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git brancj[Kh
-* ansible
-  main
-  master
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
-# On branch ansible
-# Changes not staged for commit:
-#   (use "git add/rm <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	deleted:    ansible/front-back.yml
-#	modified:   website/index.php
-#	modified:   {
-#
-# Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
-#
-#	ansible/student-list.yml
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .[K*
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
-Reinitialized existing Git repository in /home/centos/student-list/.git/
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
-# On branch ansible
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#	new file:   ansible/student-list.yml
-#	modified:   website/index.php
-#	modified:   {
-#
-# Changes not staged for commit:
-#   (use "git add/rm <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	deleted:    ansible/front-back.yml
-#
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
-[ansible 46a7273] ansible file
- 4 files changed, 741 insertions(+), 246 deletions(-)
- delete mode 100644 ansible/front-back.yml
- create mode 100644 ansible/student-list.yml
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin main
-Password for 'https://fil-rouge-team5@github.com': 
-Everything up-to-date
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git branch
-* ansible
-  main
-  master
-]0;centos@loc  ansible/front-back.yml
-#	modified:   website/index.php
-#	modified:   {
-#
-# Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
-#
-#	ansible/student-list.yml
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .[K*
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
-Reinitialized existing Git repository in /home/centos/student-list/.git/
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
-# On branch ansible
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#	new file:   ansible/student-list.yml
-#	modified:   website/index.php
-#	modified:   {
-#
-# Changes not staged for commit:
-#   (use "git add/rm <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#	deleted:    ansible/front-back.yml
-#
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
-[ansible 46a7273] ansible file
  4 files changed, 741 insertions(+), 246 deletions(-)
  delete mode 100644 ansible/front-back.yml
  create mode 100644 ansible/student-list.yml
@@ -5319,83 +5157,623 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ git [K[K[K[Kecho "ansible" >> README.md .MD
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ GIT STAT[K[K[K[K[K[K[K[Kgit status
 # On branch ansible
-# Changes not staged  changes in working directory)
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	deleted:    ansible/front-back.yml
-#	modified:   website/index.php
+#	modified:   README.md
 #	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit '[K-m "Readme"
+[ansible 713f8ac] Readme
+ 2 files changed, 416 insertions(+), 69 deletions(-)
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push oriign[K[K[Kgin ansible
+Password for 'https://fil-rouge-team5@github.com': 
+Counting objects: 17, done.
+Delta compression using up to 4 threads.
+Compressing objects:  10% (1/10)   Compressing objects:  20% (2/10)   Compressing objects:  30% (3/10)   Compressing objects:  40% (4/10)   Compressing objects:  50% (5/10)   Compressing objects:  60% (6/10)   Compressing objects:  70% (7/10)   Compressing objects:  80% (8/10)   Compressing objects:  90% (9/10)   Compressing objects: 100% (10/10)   Compressing objects: 100% (10/10), done.
+Writing objects:   9% (1/11)   Writing objects:  18% (2/11)   Writing objects:  27% (3/11)   Writing objects:  36% (4/11)   Writing objects:  45% (5/11)   Writing objects:  54% (6/11)   Writing objects:  63% (7/11)   Writing objects:  72% (8/11)   Writing objects:  81% (9/11)   Writing objects:  90% (10/11)   Writing objects: 100% (11/11)   Writing objects: 100% (11/11), 13.16 KiB | 0 bytes/s, done.
+Total 11 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/6)[Kremote: Resolving deltas:  16% (1/6)[Kremote: Resolving deltas:  33% (2/6)[Kremote: Resolving deltas:  50% (3/6)[Kremote: Resolving deltas:  66% (4/6)[Kremote: Resolving deltas:  83% (5/6)[Kremote: Resolving deltas: 100% (6/6)[Kremote: Resolving deltas: 100% (6/6), completed with 4 local objects.[K
+remote: 
+remote: Create a pull request for 'ansible' on GitHub by visiting:[K
+remote:      https://github.com/fil-rouge-team5/student-list/pull/new/ansible[K
+remote: 
+To https://fil-rouge-team5@github.com//fil-rouge-team5/student-list.git
+ * [new branch]      ansible -> ansible
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ m[Kls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ lsgit push origin ansible[1Pcommit -m "Readme"add .[Kstatusecho "ansible" >> README.md .MDgit status[Kbranchpush origin maincommit -m "ansible file"[15Padd --all.[Kstatus[2Pinitadd .*statusbranchcheckout -b ansiblels[Kcd ..sudo nano /etc/docker/daemon.jsonansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Psudo nano /etc/docker/daemon.json
+[sudo] password for centos: 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                     File: /etc/docker/daemon.json                                                                                [3;1H(B[m{[4d "storage-driver": "192.168.31.140:5000"[5d}[39;74H(B[0;7m[ Read 3 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[5d[A  "stor	ge-driv	r": "[39d[K[4;24H	.168.31	140:500	[1;153H(B[0;7mModified[4;40H(B[m"[K7"[Z[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: /etc/docker/daemon.json                 [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;44H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 3 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list[centos@localhost student-list]$ docker ps -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED        STATUS        PORTS                                              NAMES
+4bae45cf1105   dirane/jenkins                        "/sbin/tini -- /usr/…"   38 hours ago   Up 38 hours   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   jenkins-training_jenkins_1
+fb36a06dc8e2   joxit/docker-registry-ui:1.5-static   "/docker-entrypoint.…"   4 days ago     Up 4 days     0.0.0.0:50->80/tcp                                 my_front_resgistry
+f08fa4f76c42   registry:2                            "/entrypoint.sh /etc…"   4 days ago     Up 4 days     0.0.0.0:5007->5000/tcp                             registry-team5
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ lsdocker ps -asudo nano /etc/docker/daemon.jsonls[Kgit push origin ansible[1Pcommit -m "Readme"add .[Kstatusecho "ansible" >> README.md .MDgit status[Kbranchpush origin maincommit -m "ansible file"[15Padd --all.[Kstatus[2Pinitadd .*statusbranchcheckout -b ansiblels[Kcd ..sudo nano /etc/docker/daemon.jsonansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24@ansible-playbook -i prod.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[0;31mERROR! the playbook: student-list.yml could not be found[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ cd ansible/ls[Kansible-playbook -i prod.yml student-list.yml 
+
+PLAY [fil-rouge installation] ************************************************************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************************************************************************
+[0;32mok: [client][0m
+
+TASK [Create a network] ******************************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The default value "localhost" for tls_hostname is deprecated and will be removed in community.docker 2.0.0. From then on, docker_host will[0m
+[0;35m be used to compute tls_hostname. If you want to keep using "localhost", please set that value explicitly. This feature will be removed from community.docker in [0m
+[0;35mversion 2.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;32mok: [client][0m
+
+TASK [Clean Folder] **********************************************************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [example copying file with owner and permissions] ***********************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [Create website container] **********************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The container_default_behavior option will change its default value from "compatibility" to "no_defaults" in community.docker 2.0.0. To [0m
+[0;35mremove this warning, please specify an explicit value for it now. This feature will be removed from community.docker in version 2.0.0. Deprecation warnings can [0m
+[0;35mbe disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;35m[DEPRECATION WARNING]: Please note that the default value for `network_mode` will change from not specified (which is equal to `default`) to the name of the [0m
+[0;35mfirst network in `networks` if `networks` has at least one entry and `networks_cli_compatible` is `true`. You can change the behavior now by explicitly setting [0m
+[0;35m`network_mode` to the name of the first network in `networks`, and remove this warning by setting `network_mode` to `default`. Please make sure that the value [0m
+[0;35myou set to `network_mode` equals the inspection result for existing containers, otherwise the module will recreate them. You can find out the correct value by [0m
+[0;35mrunning "docker inspect --format '{{.HostConfig.NetworkMode}}' <container_name>". This feature will be removed from community.docker in version 2.0.0. [0m
+[0;35mDeprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;33mchanged: [client][0m
+
+TASK [Create api containers] *************************************************************************************************************************************
+[0;31mfatal: [client]: FAILED! => {"changed": false, "msg": "Error pulling image localhost:5007/student-list:local0 - 500 Server Error: Internal Server Error (\"b'{\"message\":\"Get http://localhost:5007/v2/: dial tcp [::1]:5007: connect: connection refused\"}'\")"}[0m
+
+PLAY RECAP *******************************************************************************************************************************************************
+[0;31mclient[0m                     : [0;32mok=5   [0m [0;33mchanged=3   [0m unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
+
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ lsansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd ansible/[Kls[Kansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kdocker ps -asudo nano /etc/docker/daemon.json
+[sudo] password for centos: 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                     File: /etc/docker/daemon.json                                                                                [3;1H(B[m{[4d "storage-driver": "192.168.31.140:5007"[5d}[39;74H(B[0;7m[ Read 3 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[1;153H(B[0;7mModified[4d(B[m[1P[1P[1P[1P[1P[1P[1P[1P[2P[1P[2P[1P[1P[1P[1P[2P[1P[1P[2P[1P[1P[39d[K[4d[1P[1P[1P[1P[2P[1P[1P[1P[1P5007"[K007"[K07"[K7"[K"[K[K[4;39r[39;1H
+[1;41r[4;1H[A{}[4d[K[A{}[K[K[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ sudo nano /etc/docker/daemon.json
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                     File: /etc/docker/daemon.json                                                                                [3;1H(B[m{[4d "storage-driver": "192.168.31.140:5007"[5d}[39;74H(B[0;7m[ Read 3 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[1;153H(B[0;7mModified[3d(B[m[K[2;38r[38;1H
+[1;41r[3;1H[1P[1P[1P[1P[1P[2P[1P[1P[1P[1P[1P[2P[1P[2P[1P[2P[1P[1P[2P[39d[K[3d[1P[2P[1P[2P[2P[1P[1P5007"[K07"[K7"[K"[K[K[4d[K[A[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: /etc/docker/daemon.json                 [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;44H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 0 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ^C
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ sudo nano /etc/docker/daemon.json[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd ansible/[Kansible-playbook -i prod.yml student-list.yml 
+
+PLAY [fil-rouge installation] ************************************************************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************************************************************************
+[0;32mok: [client][0m
+
+TASK [Create a network] ******************************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The default value "localhost" for tls_hostname is deprecated and will be removed in community.docker 2.0.0. From then on, docker_host will[0m
+[0;35m be used to compute tls_hostname. If you want to keep using "localhost", please set that value explicitly. This feature will be removed from community.docker in [0m
+[0;35mversion 2.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;32mok: [client][0m
+
+TASK [Clean Folder] **********************************************************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [example copying file with owner and permissions] ***********************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [Create website container] **********************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The container_default_behavior option will change its default value from "compatibility" to "no_defaults" in community.docker 2.0.0. To [0m
+[0;35mremove this warning, please specify an explicit value for it now. This feature will be removed from community.docker in version 2.0.0. Deprecation warnings can [0m
+[0;35mbe disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;35m[DEPRECATION WARNING]: Please note that the default value for `network_mode` will change from not specified (which is equal to `default`) to the name of the [0m
+[0;35mfirst network in `networks` if `networks` has at least one entry and `networks_cli_compatible` is `true`. You can change the behavior now by explicitly setting [0m
+[0;35m`network_mode` to the name of the first network in `networks`, and remove this warning by setting `network_mode` to `default`. Please make sure that the value [0m
+[0;35myou set to `network_mode` equals the inspection result for existing containers, otherwise the module will recreate them. You can find out the correct value by [0m
+[0;35mrunning "docker inspect --format '{{.HostConfig.NetworkMode}}' <container_name>". This feature will be removed from community.docker in version 2.0.0. [0m
+[0;35mDeprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;33mchanged: [client][0m
+
+TASK [Create api containers] *************************************************************************************************************************************
+[0;31mfatal: [client]: FAILED! => {"changed": false, "msg": "Error pulling image localhost:5007/student-list:local0 - 500 Server Error: Internal Server Error (\"b'{\"message\":\"Get http://localhost:5007/v2/: dial tcp [::1]:5007: connect: connection refused\"}'\")"}[0m
+
+PLAY RECAP *******************************************************************************************************************************************************
+[0;31mclient[0m                     : [0;32mok=5   [0m [0;33mchanged=3   [0m unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
+
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nano student-list.yml 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                       File: student-list.yml                                                                                     [3;1H(B[m---[4d- name: "fil-rouge installation"[5;3Hbecome: yes[6;3Hhosts: prod[7;3Hvars:[8;5Hansible_python_interpreter: /usr/bin/python3[9;3Htasks:[10;5H- name: Create a network[11;7Hcommunity.docker.docker_network:[12;9Hname: "reseau1"[14;5H- name: "Clean Folder"[15;7Hfile:[16d	path: "/home/centos/student-list/"[17;9Hstate: absent[19;5H- name: example copying file with owner and permissions[20;7Hcopy:[21d	src: ../[22;9Hdest: /home/centos/student-list/[25;5H- name: Create website container[26;7Hdocker_container:[27;9Hname: "website"[28;9Himage: "php:7.2-apache"[29;9Hports: 80:80[30;9Hpull: true[31;9Henv:[32dUSERNAME: "toto"[33;11HPASSWORD: "python"[34;9Hnetworks:[35;11H- name: "reseau1"[36;9Hvolumes:[37;11H- /home/centos/student-list/website:/var/www/html[39;73H(B[0;7m[ Read 47 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[9d[10d[12d[14d[15d[16d[17d[18d[19d[21d[22d[24d[25d[26d[27d[28d[39d[K[30d[31d[32d[33d[35d[37d[38d7[3;39r8[39d[19S[1;41r[20;5H- name: Create api containers[21;7Hdocker_container:[22;9Hname: "api"[23;9Himage: "localhost:5007/student-list:local0"[24;9Hports: 5000:5000[25;9Hnetworks:[26;11H- name: "reseau1"[27;9Hpull: true[28;9Hvolumes:[29;11H- /home/centos/student-list/simple_api/student_age.json:/data/student_age.json[30d...[20d[21d[22d[23d[24d[25d[26d[A[A[A[A[23d       	image: 	localho	t[1;153H(B[0;7mModified[23;25H(B[m[1P[1P[1P[1P[1P[1P[1P[1P[Z[1P192.168.31.132:5007/student-list:local0"[23;31H[1P[1P4:5007/student-list:local0"[23;30H0:5007/student-list:local0"[23;31H:	007/st	ent-li	:lo[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: student-list.yml                        [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;37H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 47 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nano student-list.yml ls[Kansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Psudo nano /etc/docker/daemon.json[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cansible-playbook -i prod.yml student-list.yml 
+
+PLAY [fil-rouge installation] ************************************************************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************************************************************************
+[0;32mok: [client][0m
+
+TASK [Create a network] ******************************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The default value "localhost" for tls_hostname is deprecated and will be removed in community.docker 2.0.0. From then on, docker_host will[0m
+[0;35m be used to compute tls_hostname. If you want to keep using "localhost", please set that value explicitly. This feature will be removed from community.docker in [0m
+[0;35mversion 2.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;32mok: [client][0m
+
+TASK [Clean Folder] **********************************************************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [example copying file with owner and permissions] ***********************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [Create website container] **********************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The container_default_behavior option will change its default value from "compatibility" to "no_defaults" in community.docker 2.0.0. To [0m
+[0;35mremove this warning, please specify an explicit value for it now. This feature will be removed from community.docker in version 2.0.0. Deprecation warnings can [0m
+[0;35mbe disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;35m[DEPRECATION WARNING]: Please note that the default value for `network_mode` will change from not specified (which is equal to `default`) to the name of the [0m
+[0;35mfirst network in `networks` if `networks` has at least one entry and `networks_cli_compatible` is `true`. You can change the behavior now by explicitly setting [0m
+[0;35m`network_mode` to the name of the first network in `networks`, and remove this warning by setting `network_mode` to `default`. Please make sure that the value [0m
+[0;35myou set to `network_mode` equals the inspection result for existing containers, otherwise the module will recreate them. You can find out the correct value by [0m
+[0;35mrunning "docker inspect --format '{{.HostConfig.NetworkMode}}' <container_name>". This feature will be removed from community.docker in version 2.0.0. [0m
+[0;35mDeprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;33mchanged: [client][0m
+
+TASK [Create api containers] *************************************************************************************************************************************
+[0;31mfatal: [client]: FAILED! => {"changed": false, "msg": "Error pulling image 192.168.31.140:5007/student-list:local0 - 500 Server Error: Internal Server Error (\"b'{\"message\":\"Get https://192.168.31.140:5007/v2/: http: server gave HTTP response to HTTPS client\"}'\")"}[0m
+
+PLAY RECAP *******************************************************************************************************************************************************
+[0;31mclient[0m                     : [0;32mok=5   [0m [0;33mchanged=3   [0m unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
+
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ docker ps -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED        STATUS        PORTS                                              NAMES
+4bae45cf1105   dirane/jenkins                        "/sbin/tini -- /usr/…"   39 hours ago   Up 39 hours   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   jenkins-training_jenkins_1
+fb36a06dc8e2   joxit/docker-registry-ui:1.5-static   "/docker-entrypoint.…"   4 days ago     Up 4 days     0.0.0.0:50->80/tcp                                 my_front_resgistry
+f08fa4f76c42   registry:2                            "/entrypoint.sh /etc…"   4 days ago     Up 4 days     0.0.0.0:5007->5000/tcp                             registry-team5
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ docker ps -aansible-playbook -i prod.yml student-list.yml [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kdocker images
+REPOSITORY                     TAG           IMAGE ID       CREATED         SIZE
+filrougeteam5/student-list     latest        687849a065c0   2 hours ago     1.13GB
+api                            latest        687849a065c0   2 hours ago     1.13GB
+filrougeteam5                  latest        687849a065c0   2 hours ago     1.13GB
+localhost:5007/student-list    local         687849a065c0   2 hours ago     1.13GB
+localhost:5007/student-list    local0        687849a065c0   2 hours ago     1.13GB
+<none>                         <none>        8674a734f737   2 hours ago     945MB
+website-php                    latest        27a65415ea24   28 hours ago    410MB
+my-php-website                 latest        c79019a12e47   40 hours ago    410MB
+fil-rouge-team5/student-list   1.2           223ea714ae3a   2 days ago      1.13GB
+fil-rouge-team5/student-list   latest        223ea714ae3a   2 days ago      1.13GB
+student-list                   latest        223ea714ae3a   2 days ago      1.13GB
+localhost:5007/student-list    latest        223ea714ae3a   2 days ago      1.13GB
+php                            apache        97f22a92e1d1   5 days ago      417MB
+localhost:5007/php             local         97f22a92e1d1   5 days ago      417MB
+snyk/snyk                      python-2.7    46c3e2c81ebe   9 days ago      994MB
+snyk/snyk                      python        f2d93a97d10c   9 days ago      978MB
+snyk/snyk                      docker        b8ab60d790e7   9 days ago      319MB
+registry                       2             1fd8e1b0bb7e   4 weeks ago     26.2MB
+joxit/docker-registry-ui       1.5-static    74416e0cd8ba   3 months ago    24.2MB
+dirane/jenkins                 latest        79cfcacb58f3   5 months ago    1.5GB
+python                         2.7-stretch   e71fc5c0fcb1   13 months ago   928MB
+jenkins                        1.596         484633fa05c1   6 years ago     662MB
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ docker images[1Pps -aansible-playbook -i prod.yml student-list.yml [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Knano student-list.yml ls[Kansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Psudo nano /etc/docker/daemon.json[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd ansible/[Kls[Kansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kdocker ps -asudo nano /etc/docker/daemon.json[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kgit push origin ansible[1Pcommit -m "Readme"add .[Kstatusecho "ansible" >> README.md .MD[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit status[Kbranchpush origin maincommit -m "ansible file"[15Padd --all.[Kstatus[2Pinitadd .*statusbranchcheckout -b ansiblels[Kcd ..sudo nano /etc/docker/daemon.json[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9Pdocker imagesansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24@ansible-playbook -i prod.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ansible/ls[Kcd ..vi index.php ls[Kcd website/ls[Kcd ..ansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24@ansible-playbook -i prod.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24@ansible-playbook -i prod.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pnano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pcat[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@nano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2@install-docker[C[C[C[C[Cls[Kansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Knano student-list.yml ls[Kmv front-back.yml student-list.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kdocker imagesls[Kcd ansible/ls[Kdocker push localhost:5007/student-list:local0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12@tag 687849a065c0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[C[C[C[C[C[C[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list6localhost:5007/student-list8localhost:5007/student-list7localhost:5007/student-list8localhost:5007/student-list4localhost:5007/student-list9localhost:5007/student-listalocalhost:5007/student-list0localhost:5007/student-list6localhost:5007/student-list5localhost:5007/student-listclocalhost:5007/student-list0localhost:5007/student-list localhost:5007/student-list
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ docker tag 687849a065c0 localhost:5007/student-list[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cimages[Ktag 687849a065c0 localhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-list[1Plocalhost:5007/student-listplocalhost:5007/student-listulocalhost:5007/student-listslocalhost:5007/student-listhlocalhost:5007/student-list localhost:5007/student-list
+Using default tag: latest
+The push refers to repository [localhost:5007/student-list]
+
+[1A[2Kb7d1e39b4514: Preparing [1B
+[1A[2K83f7a12b509a: Preparing [1B
+[1A[2K524d60228759: Preparing [1B
+[1A[2K9304eee889c2: Preparing [1B
+[1A[2Ke597eaf9f368: Preparing [1B
+[1A[2K811b6c5694d4: Preparing [1B
+[1A[2K1855932b077c: Preparing [1B
+[1A[2Kfa28e7fcadc2: Preparing [1B
+[1A[2K4427a3d9a321: Preparing [1B
+[1A[2K4a03ae8d3bee: Preparing [1B
+[1A[2Ka9286fedbd63: Preparing [1B
+[1A[2Kd50e7be1e737: Preparing [1B
+[1A[2K6b114a2dd6de: Preparing [1B
+[1A[2Kbb9315db9240: Preparing [1B[7A[2Kfa28e7fcadc2: Waiting [7B[6A[2K4427a3d9a321: Waiting [6B[5A[2K4a03ae8d3bee: Waiting [5B[4A[2Ka9286fedbd63: Waiting [4B[3A[2Kd50e7be1e737: Waiting [3B[2A[2K6b114a2dd6de: Waiting [2B[1A[2Kbb9315db9240: Waiting [1B[9A[2K811b6c5694d4: Waiting [9B[8A[2K1855932b077c: Waiting [8B[11A[2K9304eee889c2: Layer already exists [11B[13A[2K83f7a12b509a: Layer already exists [13B[14A[2Kb7d1e39b4514: Layer already exists [14B[10A[2Ke597eaf9f368: Layer already exists [10B[12A[2K524d60228759: Layer already exists [12B[9A[2K811b6c5694d4: Layer already exists [9B[6A[2K4427a3d9a321: Layer already exists [6B[4A[2Ka9286fedbd63: Layer already exists [4B[8A[2K1855932b077c: Layer already exists [8B[7A[2Kfa28e7fcadc2: Layer already exists [7B[5A[2K4a03ae8d3bee: Layer already exists [5B[2A[2K6b114a2dd6de: Layer already exists [2B[1A[2Kbb9315db9240: Layer already exists [1B[3A[2Kd50e7be1e737: Layer already exists [3Blatest: digest: sha256:4df9350080dfa07a9c1cb9f6f4734415136a115ccd6fb33856ddc9d2f2445682 size: 3274
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ st[K[Knano student-list.yml 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                       File: student-list.yml                                                                                     [3;1H(B[m---[4d- name: "fil-rouge installation"[5;3Hbecome: yes[6;3Hhosts: prod[7;3Hvars:[8;5Hansible_python_interpreter: /usr/bin/python3[9;3Htasks:[10;5H- name: Create a network[11;7Hcommunity.docker.docker_network:[12;9Hname: "reseau1"[14;5H- name: "Clean Folder"[15;7Hfile:[16d	path: "/home/centos/student-list/"[17;9Hstate: absent[19;5H- name: example copying file with owner and permissions[20;7Hcopy:[21d	src: ../[22;9Hdest: /home/centos/student-list/[25;5H- name: Create website container[26;7Hdocker_container:[27;9Hname: "website"[28;9Himage: "php:7.2-apache"[29;9Hports: 80:80[30;9Hpull: true[31;9Henv:[32dUSERNAME: "toto"[33;11HPASSWORD: "python"[34;9Hnetworks:[35;11H- name: "reseau1"[36;9Hvolumes:[37;11H- /home/centos/student-list/website:/var/www/html[39;73H(B[0;7m[ Read 47 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[5d[7d[8d[9d[10d[12d[14d[15d[17d[18d[20d[22d[23d[24d[26d[27d[39d[K[29d[30d[32d[33d[34d[35d[36d[37d[38d7[3;39r8[39d[19S[1;41r[20;5H- name: Create api containers[21;7Hdocker_container:[22;9Hname: "api"[23;9Himage: "192.168.31.140:5007/student-list:local0"[24;9Hports: 5000:5000[25;9Hnetworks:[26;11H- name: "reseau1"[27;9Hpull: true[28;9Hvolumes:[29;11H- /home/centos/student-list/simple_api/student_age.json:/data/student_age.json[30d...[20d[22d[23d[24d[A      	image:	192.16	31.140:	007/stu	ent-lis	:local0[1;153H(B[0;7mModified[23;55H(B[m"[K"[K"[K"[K"[K"[K[Z"[K[Z[Z[Z[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: student-list.yml                        [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;37H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 47 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ docker ps
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED        STATUS        PORTS                                              NAMES
+4bae45cf1105   dirane/jenkins                        "/sbin/tini -- /usr/…"   39 hours ago   Up 39 hours   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   jenkins-training_jenkins_1
+fb36a06dc8e2   joxit/docker-registry-ui:1.5-static   "/docker-entrypoint.…"   4 days ago     Up 4 days     0.0.0.0:50->80/tcp                                 my_front_resgistry
+f08fa4f76c42   registry:2                            "/entrypoint.sh /etc…"   4 days ago     Up 4 days     0.0.0.0:5007->5000/tcp                             registry-team5
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ docker psnano student-list.yml ls[Kdocker push localhost:5007/student-list[12@tag 687849a065c0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cimages[K[1Pps -a[Knano student-list.yml ls[Kansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Psudo nano /etc/docker/daemon.json[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cansible-playbook -i prod.yml student-list.yml 
+
+PLAY [fil-rouge installation] ************************************************************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************************************************************************
+[0;32mok: [client][0m
+
+TASK [Create a network] ******************************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The default value "localhost" for tls_hostname is deprecated and will be removed in community.docker 2.0.0. From then on, docker_host will[0m
+[0;35m be used to compute tls_hostname. If you want to keep using "localhost", please set that value explicitly. This feature will be removed from community.docker in [0m
+[0;35mversion 2.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;32mok: [client][0m
+
+TASK [Clean Folder] **********************************************************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [example copying file with owner and permissions] ***********************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [Create website container] **********************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The container_default_behavior option will change its default value from "compatibility" to "no_defaults" in community.docker 2.0.0. To [0m
+[0;35mremove this warning, please specify an explicit value for it now. This feature will be removed from community.docker in version 2.0.0. Deprecation warnings can [0m
+[0;35mbe disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;35m[DEPRECATION WARNING]: Please note that the default value for `network_mode` will change from not specified (which is equal to `default`) to the name of the [0m
+[0;35mfirst network in `networks` if `networks` has at least one entry and `networks_cli_compatible` is `true`. You can change the behavior now by explicitly setting [0m
+[0;35m`network_mode` to the name of the first network in `networks`, and remove this warning by setting `network_mode` to `default`. Please make sure that the value [0m
+[0;35myou set to `network_mode` equals the inspection result for existing containers, otherwise the module will recreate them. You can find out the correct value by [0m
+[0;35mrunning "docker inspect --format '{{.HostConfig.NetworkMode}}' <container_name>". This feature will be removed from community.docker in version 2.0.0. [0m
+[0;35mDeprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;33mchanged: [client][0m
+
+TASK [Create api containers] *************************************************************************************************************************************
+[0;31mfatal: [client]: FAILED! => {"changed": false, "msg": "Error pulling image 192.168.31.140:5007/student-list:latest - 500 Server Error: Internal Server Error (\"b'{\"message\":\"Get https://192.168.31.140:5007/v2/: http: server gave HTTP response to HTTPS client\"}'\")"}[0m
+
+PLAY RECAP *******************************************************************************************************************************************************
+[0;31mclient[0m                     : [0;32mok=5   [0m [0;33mchanged=3   [0m unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
+
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ansible-playbook -i prod.yml student-list.yml [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker ps[Knano student-list.yml ls[Knano student-list.yml 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                       File: student-list.yml                                                                                     [3;1H(B[m---[4d- name: "fil-rouge installation"[5;3Hbecome: yes[6;3Hhosts: prod[7;3Hvars:[8;5Hansible_python_interpreter: /usr/bin/python3[9;3Htasks:[10;5H- name: Create a network[11;7Hcommunity.docker.docker_network:[12;9Hname: "reseau1"[14;5H- name: "Clean Folder"[15;7Hfile:[16d	path: "/home/centos/student-list/"[17;9Hstate: absent[19;5H- name: example copying file with owner and permissions[20;7Hcopy:[21d	src: ../[22;9Hdest: /home/centos/student-list/[25;5H- name: Create website container[26;7Hdocker_container:[27;9Hname: "website"[28;9Himage: "php:7.2-apache"[29;9Hports: 80:80[30;9Hpull: true[31;9Henv:[32dUSERNAME: "toto"[33;11HPASSWORD: "python"[34;9Hnetworks:[35;11H- name: "reseau1"[36;9Hvolumes:[37;11H- /home/centos/student-list/website:/var/www/html[39;73H(B[0;7m[ Read 47 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[5d[7d[8d[9d[11d[12d[14d[15d[16d[17d[19d[20d[22d[23d[24d[26d[27d[28d[39d[K[29d[31d[32d[34d[35d[36d[37d[38d7[3;39r8[39d[19S[1;41r[20;5H- name: Create api containers[21;7Hdocker_container:[22;9Hname: "api"[23;9Himage: "192.168.31.140:5007/student-list"[24;9Hports: 5000:5000[25;9Hnetworks:[26;11H- name: "reseau1"[27;9Hpull: true[28;9Hvolumes:[29;11H- /home/centos/student-list/simple_api/student_age.json:/data/student_age.json[30d...[20d[22d[23d[24d[25d[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nano student-list.yml [24@ansible-playbook -i prod.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+PLAY [fil-rouge installation] ************************************************************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************************************************************************
+[0;32mok: [client][0m
+
+TASK [Create a network] ******************************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The default value "localhost" for tls_hostname is deprecated and will be removed in community.docker 2.0.0. From then on, docker_host will[0m
+[0;35m be used to compute tls_hostname. If you want to keep using "localhost", please set that value explicitly. This feature will be removed from community.docker in [0m
+[0;35mversion 2.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;32mok: [client][0m
+
+TASK [Clean Folder] **********************************************************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [example copying file with owner and permissions] ***********************************************************************************************************
+[0;33mchanged: [client][0m
+
+TASK [Create website container] **********************************************************************************************************************************
+[0;35m[DEPRECATION WARNING]: The container_default_behavior option will change its default value from "compatibility" to "no_defaults" in community.docker 2.0.0. To [0m
+[0;35mremove this warning, please specify an explicit value for it now. This feature will be removed from community.docker in version 2.0.0. Deprecation warnings can [0m
+[0;35mbe disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;35m[DEPRECATION WARNING]: Please note that the default value for `network_mode` will change from not specified (which is equal to `default`) to the name of the [0m
+[0;35mfirst network in `networks` if `networks` has at least one entry and `networks_cli_compatible` is `true`. You can change the behavior now by explicitly setting [0m
+[0;35m`network_mode` to the name of the first network in `networks`, and remove this warning by setting `network_mode` to `default`. Please make sure that the value [0m
+[0;35myou set to `network_mode` equals the inspection result for existing containers, otherwise the module will recreate them. You can find out the correct value by [0m
+[0;35mrunning "docker inspect --format '{{.HostConfig.NetworkMode}}' <container_name>". This feature will be removed from community.docker in version 2.0.0. [0m
+[0;35mDeprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.[0m
+[0;33mchanged: [client][0m
+
+TASK [Create api containers] *************************************************************************************************************************************
+[0;33mchanged: [client][0m
+
+PLAY RECAP *******************************************************************************************************************************************************
+[0;33mclient[0m                     : [0;32mok=6   [0m [0;33mchanged=4   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ c[Kdocker [K[K[K[K[K[K[Kcat student-list.yml 
+---
+- name: "fil-rouge installation"
+  become: yes
+  hosts: prod
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - name: Create a network
+      community.docker.docker_network:
+        name: "reseau1"
+
+    - name: "Clean Folder"
+      file:
+        path: "/home/centos/student-list/"
+        state: absent
+
+    - name: example copying file with owner and permissions
+      copy:
+        src: ../
+        dest: /home/centos/student-list/
+
+
+    - name: Create website container
+      docker_container:
+        name: "website"
+        image: "php:7.2-apache"
+        ports: 80:80
+        pull: true
+        env:
+          USERNAME: "toto"
+          PASSWORD: "python"
+        networks:
+          - name: "reseau1"
+        volumes:
+          - /home/centos/student-list/website:/var/www/html
+
+    - name: Create api containers
+      docker_container:
+        name: "api"
+        image: "192.168.31.140:5007/student-list"
+        ports: 5000:5000
+        networks:
+          - name: "reseau1"
+        pull: true
+        volumes:
+          - /home/centos/student-list/simple_api/student_age.json:/data/student_age.json
+...
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ cd ..
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ansible/student-list.yml
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add ansible/student-list.yml
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status [K[K[K[K[K[K[Kcommit -m ""t"h"e" "p"l"a"y"b"o"o"k" "s"t"d"u"e"[1P"[1P"[1P"u"d"e"n"t"-"l"i"s"t"[C[1@ [1@T[1@a[1@k[1@e[1@ [1@i[1@n[C[1@t[1@o[1@ [1@a[1@c[1@c[1@o[1@u[1@n[C[1@t[1@ [C[1@t[1@h[1@e[1@ [1@i[1@m[1@a[1@g[1@e[1@ [1@o[1@f[1@ [C[1@t[1@h[1@e[1@ [1@p[1@r[1@i[1@v[1@a[C[1@t[1@e[1@ [1@r[1@e[1@g[1@i[1@s[C[1@t[1@r[1@y[1@ [1@i[1@n[1@ 
+[ansible 1ea9d37]  Take into account the image of the private registry in the playbook student-list
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status[K[K[K[K[K[Kpush origin main[K[K[K[Kansible
+Password for 'https://fil-rouge-team5@github.com': 
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 429 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)[Kremote: Resolving deltas:  33% (1/3)[Kremote: Resolving deltas:  66% (2/3)[Kremote: Resolving deltas: 100% (3/3)[Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To https://fil-rouge-team5@github.com//fil-rouge-team5/student-list.git
+   713f8ac..1ea9d37  ansible -> ansible
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ docker ps -a
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED        STATUS        PORTS                                              NAMES
+4bae45cf1105   dirane/jenkins                        "/sbin/tini -- /usr/…"   39 hours ago   Up 39 hours   0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   jenkins-training_jenkins_1
+fb36a06dc8e2   joxit/docker-registry-ui:1.5-static   "/docker-entrypoint.…"   4 days ago     Up 4 days     0.0.0.0:50->80/tcp                                 my_front_resgistry
+f08fa4f76c42   registry:2                            "/entrypoint.sh /etc…"   4 days ago     Up 4 days     0.0.0.0:5007->5000/tcp                             registry-team5
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ docker ps -agit push origin ansible[11Pdocker ps -a[Kdocker ps -a[Kls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ docker pull dirane/docker-ansible
+Using default tag: latest
+latest: Pulling from dirane/docker-ansible
+
+[1A[2Kbd8f6a7501cc: Already exists [1B
+[1A[2K44718e6d535d: Already exists [1B
+[1A[2Kefe9738af0cb: Already exists [1B
+[1A[2Kf37aabde37b8: Already exists [1B
+[1A[2K3923d444ed05: Already exists [1B
+[1A[2K1ecef690e281: Already exists [1B
+[1A[2K7398f7b5a4db: Pulling fs layer [1B
+[1A[2K4bc12dba33a6: Pulling fs layer [1B
+[1A[2K21b6e61460b3: Pulling fs layer [1B
+[1A[2Kfe67b88c540d: Pulling fs layer [1B
+[1A[2K0f8d4fda0956: Pulling fs layer [1B[2A[2Kfe67b88c540d: Waiting [2B[1A[2K0f8d4fda0956: Waiting [1B[4A[2K4bc12dba33a6: Downloading [==================================================>]     235B/235B[4B[4A[2K4bc12dba33a6: Verifying Checksum [4B[4A[2K4bc12dba33a6: Download complete [4B[3A[2K21b6e61460b3: Downloading [>                                                  ]  23.88kB/2.312MB[3B[5A[2K7398f7b5a4db: Downloading [>                                                  ]  184.2kB/18.32MB[5B[3A[2K21b6e61460b3: Downloading [==============>                                    ]  687.3kB/2.312MB[3B[5A[2K7398f7b5a4db: Downloading [==>                                                ]  768.4kB/18.32MB[5B[3A[2K21b6e61460b3: Downloading [===========================>                       ]  1.269MB/2.312MB[3B[5A[2K7398f7b5a4db: Downloading [===>                                               ]   1.35MB/18.32MB[5B[3A[2K21b6e61460b3: Downloading [=======================================>           ]  1.825MB/2.312MB[3B[5A[2K7398f7b5a4db: Downloading [=====>                                             ]   1.94MB/18.32MB[5B[3A[2K21b6e61460b3: Verifying Checksum [3B[3A[2K21b6e61460b3: Download complete [3B[5A[2K7398f7b5a4db: Downloading [======>                                            ]  2.333MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [>                                                  ]  142.6kB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [========>                                          ]   3.12MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [===>                                               ]    879kB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [==========>                                        ]   3.89MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [=====>                                             ]  1.481MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [============>                                      ]  4.664MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [=======>                                           ]  2.071MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [==============>                                    ]  5.245MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [=========>                                         ]  2.665MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [>                                                  ]    539kB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [===============>                                   ]  5.626MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [==========>                                        ]   2.96MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [>                                                  ]  1.067MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [================>                                  ]  5.999MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [===========>                                       ]  3.263MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [=>                                                 ]    1.6MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [=================>                                 ]  6.384MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [============>                                      ]  3.562MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [==================>                                ]  6.761MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [=>                                                 ]  2.673MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [=============>                                     ]  3.861MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [==>                                                ]  3.206MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [==============>                                    ]  4.156MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [===================>                               ]  7.154MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [==>                                                ]  3.742MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [===============>                                   ]  4.447MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [====================>                              ]  7.547MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [================>                                  ]   4.75MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [=====================>                             ]  7.936MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [===>                                               ]  4.807MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [=================>                                 ]  5.045MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [===>                                               ]  5.348MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [======================>                            ]   8.33MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [===================>                               ]  5.344MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [====>                                              ]  5.888MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [=======================>                           ]  8.723MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [====================>                              ]  5.639MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [====>                                              ]  6.421MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [=====================>                             ]  5.933MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [========================>                          ]  9.116MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [======================>                            ]  6.232MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [=========================>                         ]  9.505MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [=====>                                             ]  7.498MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [=======================>                           ]  6.527MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [=====>                                             ]  8.035MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [===========================>                       ]  9.898MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [========================>                          ]   6.83MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [======>                                            ]  8.567MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [============================>                      ]  10.28MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [=========================>                         ]  7.125MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [======>                                            ]  9.096MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [=============================>                     ]  10.67MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [==========================>                        ]   7.42MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [=======>                                           ]  9.636MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [===========================>                       ]  7.723MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [==============================>                    ]  11.06MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [=======>                                           ]  10.16MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [=============================>                     ]  8.166MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [=======>                                           ]  10.69MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [===============================>                   ]  11.44MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [==============================>                    ]  8.608MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [================================>                  ]  11.84MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [========>                                          ]  11.77MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [================================>                  ]  9.051MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [=========>                                         ]   12.3MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [=================================>                 ]  12.22MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [=========>                                         ]  12.84MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [=================================>                 ]  9.493MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [==================================>                ]  12.61MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [=========>                                         ]  13.38MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [===================================>               ]  9.931MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [===================================>               ]  13.01MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [==========>                                        ]  13.91MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [====================================>              ]  10.23MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [==========>                                        ]  14.45MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [====================================>              ]  13.39MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [=====================================>             ]  10.53MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [==========>                                        ]  14.99MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [=====================================>             ]  13.77MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [======================================>            ]  10.82MB/14.04MB[2B[2A[2Kfe67b88c540d: Downloading [=======================================>           ]  11.11MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [======================================>            ]  14.17MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [===========>                                       ]  16.05MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [========================================>          ]  11.42MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [=======================================>           ]  14.56MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [============>                                      ]   16.6MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [=========================================>         ]  11.72MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [============>                                      ]  17.14MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [========================================>          ]  14.95MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [==========================================>        ]  12.01MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [============>                                      ]  17.68MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [=========================================>         ]  15.34MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [===========================================>       ]  12.31MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [=============>                                     ]  18.21MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [============================================>      ]  12.61MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [==========================================>        ]  15.74MB/18.32MB[5B[5A[2K7398f7b5a4db: Downloading [============================================>      ]  16.13MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [==============================================>    ]  13.06MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [==============>                                    ]  19.29MB/68.22MB[1B[2A[2Kfe67b88c540d: Downloading [===============================================>   ]  13.35MB/14.04MB[2B[5A[2K7398f7b5a4db: Downloading [=============================================>     ]  16.51MB/18.32MB[5B[2A[2Kfe67b88c540d: Downloading [================================================>  ]  13.65MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [==============>                                    ]  20.36MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [==============================================>    ]  16.91MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [===============>                                   ]   20.9MB/68.22MB[1B[2A[2Kfe67b88c540d: Download complete [2B[5A[2K7398f7b5a4db: Downloading [===============================================>   ]   17.3MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [===============>                                   ]  21.44MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [================================================>  ]  17.69MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [================>                                  ]  21.97MB/68.22MB[1B[5A[2K7398f7b5a4db: Downloading [=================================================> ]  18.28MB/18.32MB[5B[5A[2K7398f7b5a4db: Download complete [5B[1A[2K0f8d4fda0956: Downloading [================>                                  ]  22.51MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [================>                                  ]  23.05MB/68.22MB[1B[5A[2K7398f7b5a4db: Extracting [>                                                  ]  196.6kB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [=================>                                 ]  23.59MB/68.22MB[1B[5A[2K7398f7b5a4db: Extracting [=========>                                         ]  3.539MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [==================>                                ]  24.66MB/68.22MB[1B[5A[2K7398f7b5a4db: Extracting [================>                                  ]  6.095MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [===================>                               ]  26.27MB/68.22MB[1B[5A[2K7398f7b5a4db: Extracting [=====================>                             ]  7.864MB/18.32MB[5B[5A[2K7398f7b5a4db: Extracting [===============================>                   ]   11.6MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [====================>                              ]  27.88MB/68.22MB[1B[5A[2K7398f7b5a4db: Extracting [=======================================>           ]  14.35MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [=====================>                             ]  29.49MB/68.22MB[1B[5A[2K7398f7b5a4db: Extracting [==============================================>    ]   17.1MB/18.32MB[5B[1A[2K0f8d4fda0956: Downloading [======================>                            ]  30.55MB/68.22MB[1B[5A[2K7398f7b5a4db: Extracting [==================================================>]  18.32MB/18.32MB[5B[5A[2K7398f7b5a4db: Pull complete [5B[4A[2K4bc12dba33a6: Extracting [==================================================>]     235B/235B[4B[4A[2K4bc12dba33a6: Extracting [==================================================>]     235B/235B[4B[4A[2K4bc12dba33a6: Pull complete [4B[3A[2K21b6e61460b3: Extracting [>                                                  ]  32.77kB/2.312MB[3B[1A[2K0f8d4fda0956: Downloading [=======================>                           ]  32.17MB/68.22MB[1B[3A[2K21b6e61460b3: Extracting [=======>                                           ]  327.7kB/2.312MB[3B[1A[2K0f8d4fda0956: Downloading [========================>                          ]  33.79MB/68.22MB[1B[3A[2K21b6e61460b3: Extracting [========================================>          ]  1.868MB/2.312MB[3B[3A[2K21b6e61460b3: Extracting [==================================================>]  2.312MB/2.312MB[3B[3A[2K21b6e61460b3: Pull complete [3B[1A[2K0f8d4fda0956: Downloading [=========================>                         ]   35.4MB/68.22MB[1B[2A[2Kfe67b88c540d: Extracting [>                                                  ]  163.8kB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [==========================>                        ]  36.47MB/68.22MB[1B[2A[2Kfe67b88c540d: Extracting [===============>                                   ]   4.26MB/14.04MB[2B[2A[2Kfe67b88c540d: Extracting [==============================>                    ]   8.52MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [===========================>                       ]  37.54MB/68.22MB[1B[2A[2Kfe67b88c540d: Extracting [=============================================>     ]  12.78MB/14.04MB[2B[1A[2K0f8d4fda0956: Downloading [============================>                      ]  38.62MB/68.22MB[1B[2A[2Kfe67b88c540d: Extracting [==================================================>]  14.04MB/14.04MB[2B[2A[2Kfe67b88c540d: Pull complete [2B[1A[2K0f8d4fda0956: Downloading [=============================>                     ]  40.23MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [==============================>                    ]  41.83MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [===============================>                   ]  43.43MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [================================>                  ]  45.02MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [==================================>                ]  46.64MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [===================================>               ]  48.26MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [====================================>              ]  49.87MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [=====================================>             ]  51.46MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [======================================>            ]  53.07MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [========================================>          ]  54.66MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [========================================>          ]  55.74MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [==========================================>        ]  57.36MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [===========================================>       ]  58.96MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [============================================>      ]  60.58MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [=============================================>     ]  62.18MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [==============================================>    ]  63.77MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [===============================================>   ]  65.37MB/68.22MB[1B[1A[2K0f8d4fda0956: Downloading [=================================================> ]  66.98MB/68.22MB[1B[1A[2K0f8d4fda0956: Verifying Checksum [1B[1A[2K0f8d4fda0956: Download complete [1B[1A[2K0f8d4fda0956: Extracting [>                                                  ]  557.1kB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=>                                                 ]  1.671MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [==>                                                ]  2.785MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [====>                                              ]  5.571MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=====>                                             ]  7.242MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [======>                                            ]   9.47MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=======>                                           ]  10.03MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [========>                                          ]  11.14MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [========>                                          ]  12.26MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=========>                                         ]  13.37MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [===========>                                       ]  15.04MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [===========>                                       ]   15.6MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [============>                                      ]  16.71MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=============>                                     ]  18.38MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [================>                                  ]  22.84MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=================>                                 ]  23.95MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [==================>                                ]  25.62MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [===================>                               ]  26.74MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [====================>                              ]  28.41MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [======================>                            ]  30.08MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [======================>                            ]   31.2MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [========================>                          ]  32.87MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [========================>                          ]  33.98MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=========================>                         ]  35.09MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [==========================>                        ]  36.77MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [===========================>                       ]  37.88MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [============================>                      ]  38.44MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [============================>                      ]  39.55MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=============================>                     ]  40.67MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [==============================>                    ]  41.22MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [===============================>                   ]  42.34MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [================================>                  ]  44.01MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=================================>                 ]  45.12MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [==================================>                ]  46.79MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [===================================>               ]  47.91MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [===================================>               ]  49.02MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [====================================>              ]  50.14MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=====================================>             ]  51.25MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=====================================>             ]  51.81MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [======================================>            ]  52.92MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=======================================>           ]  54.03MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [========================================>          ]  55.15MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [========================================>          ]  55.71MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=========================================>         ]  56.82MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [==========================================>        ]  57.93MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [===========================================>       ]  59.05MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=============================================>     ]  61.83MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [==============================================>    ]  64.06MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [================================================>  ]  66.29MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [=================================================> ]   67.4MB/68.22MB[1B[1A[2K0f8d4fda0956: Extracting [==================================================>]  68.22MB/68.22MB[1B[1A[2K0f8d4fda0956: Pull complete [1BDigest: sha256:db7cf1eb44215f6705572611a4b667aa7d06a039bc6014cb6b7c09624d051fb2
+Status: Downloaded newer image for dirane/docker-ansible:latest
+docker.io/dirane/docker-ansible:latest
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ docker images
+REPOSITORY                     TAG           IMAGE ID       CREATED         SIZE
+filrougeteam5/student-list     latest        687849a065c0   2 hours ago     1.13GB
+api                            latest        687849a065c0   2 hours ago     1.13GB
+filrougeteam5                  latest        687849a065c0   2 hours ago     1.13GB
+localhost:5007/student-list    latest        687849a065c0   2 hours ago     1.13GB
+localhost:5007/student-list    local         687849a065c0   2 hours ago     1.13GB
+localhost:5007/student-list    local0        687849a065c0   2 hours ago     1.13GB
+<none>                         <none>        8674a734f737   2 hours ago     945MB
+website-php                    latest        27a65415ea24   29 hours ago    410MB
+my-php-website                 latest        c79019a12e47   40 hours ago    410MB
+fil-rouge-team5/student-list   1.2           223ea714ae3a   2 days ago      1.13GB
+fil-rouge-team5/student-list   latest        223ea714ae3a   2 days ago      1.13GB
+student-list                   latest        223ea714ae3a   2 days ago      1.13GB
+localhost:5007/student-list    <none>        223ea714ae3a   2 days ago      1.13GB
+php                            apache        97f22a92e1d1   5 days ago      417MB
+localhost:5007/php             local         97f22a92e1d1   5 days ago      417MB
+snyk/snyk                      python-2.7    46c3e2c81ebe   9 days ago      994MB
+snyk/snyk                      python        f2d93a97d10c   9 days ago      978MB
+snyk/snyk                      docker        b8ab60d790e7   9 days ago      319MB
+dirane/docker-ansible          latest        9b5b82bd4f67   11 days ago     1.24GB
+registry                       2             1fd8e1b0bb7e   4 weeks ago     26.2MB
+joxit/docker-registry-ui       1.5-static    74416e0cd8ba   3 months ago    24.2MB
+dirane/jenkins                 latest        79cfcacb58f3   5 months ago    1.5GB
+python                         2.7-stretch   e71fc5c0fcb1   13 months ago   928MB
+jenkins                        1.596         484633fa05c1   6 years ago     662MB
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nano Jenkinsfile
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [39;76H[ New File ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[1;153H(B[0;7mModified[3;57H(B[mDOCKERHUB_LOGIN = credentials('dockerhub_team5')[4;49H}[5;44Hsteps {[6d script {[7dsh '''[8;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[9;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[10;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[11;60H'''[12;57H}[13;49H}[14;41H}[15dstage('Ansible deploy') {[16;45Hagent {[17;49Hdocker {[18dimage 'dirane/docker-ansible'[19;49H}[20;45H}[21dsteps {[22;49Hscript {[23;53Hsh '''[24;57Hcd ansible[25;57Hansible-playbook -i prod.yml install-docker.yml[26;57Hansible-playbook -i prod.yml studentlist.yml[27;53H'''[28;49H}[29;45H}[30;41H}[31;33H}[32;25H}[39d[K[33;9H[30d[27d[24d[21d[18d[15d[12d[9d[6d[3d[2;38r[2;1H[19T[1;41r[3;29Hsh '''[4d  curl http://172.17.0.1:80/ | grep -q "error"[5;29H'''[6d	}[7;25H}[8;17H}[9;33Hstage('Clean Container') {[10;43Hagent any[11;43Hsteps {[12dscript {[13;52Hsh '''[14d docker rm -vf ${IMAGE_NAME}[15;52H'''[16;49H}[17;41H}[18;33H}[19dstage('Push image on dockerhub') {[20;44Hagent any[21;44Henvironment {[19;9H[16d[13d[10d[7d[4d[2;39r[2;1H[19T[1;41r[3;29H'''[4;25H}[5;21H}[6;17H}[7;17Hstage('Run container based on builded image') {[8;21Hagent any[9;21Hsteps {[10;24Hscript {[11;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[12d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[13;29Hsleep 5[14;26H'''[15;24H}[16;21H}[17;17H}[18;17Hstage('Test image') {[19;21Hagent any[20;21Hsteps {[21;25Hscript {[39d[K[20;9H[17d[20d[23d[20d[17d[A[A[A[A[A[12;39r[39;1H
+[1;41r[11;82H/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${I$[38;44Hagent any[11;82H[12;36H[13;29H[10;32H[7;64H[4;26H[2;38r[2;1H[16T[1;41r[3;1Hpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[17;50H[14;33H[11;39H[8;15H[5;44H[3;11H[6;37H[9;23H[12;30H[15;35H[18;82H[21;22H[24;30H[27;82H[30;25H[33;38H[36;33H[2;38r[38;1H[19S[1;41r[20;24r[20;1H[2T[1;41r[2;1H[K[20;29H'''[21d	}[22;25H}[23;17H}[24;33Hstage('Clean Container') {[25;43Hagent any[26;43Hsteps {[27dscript {[28;52Hsh '''[29d docker rm -vf ${IMAGE_NAME}[30;52H'''[31;49H}[32;41H}[33;33H}[34dstage('Push image on dockerhub') {[35;44Hagent any[36;44Henvironment {[37dDOCKERHUB_LOGIN = credentials('dockerhub_team5')[38;49H}[20;32H[17d	[20d[23;18H[26;50H[23;18H[22;26H[23;18H[24;59H[Z[Z[Z[Z[1P[24;32H[1P[24;31H[1P[24;30H[1P[24;29H[1P[24;28H[1P[24;27H[1P[24;26H[1P[24;25H[1P[24;24H[1P[24;23H[1P[24;22H[1P[24;21H[1P[24;20H[1P[24;19H[1P[24;18H[1P[24;17H[25d[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[1P[25;17H[26d[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[2P[26;17H[1P[26;17H[2P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[1P[26;17H[27d[1P[27;17H[1P[27;17H[2P[27;17H[1P[27;17H[2P[27;17H[1P[27;17H[2P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[1P[27;17H[2P[27;17H[1P[27;17H[28d[1P[28;17H[1P[28;17H[2P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[2P[28;17H[2P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[1P[28;17H[29d[1P[29;17H[1P[29;17H[1P[29;17H[1P[29;17H[1P[29;17H[2P[29;17H[1P[29;17H[2P[29;17H[1P[29;17H[2P[29;17H[1P[29;17H[1P[29;17H[1P[29;17H[1P[29;17H[1P[29;17H[1P[29;17H[1P[29;17H[2P[29;17H[1P[29;17H[1P[29;17H[1P[29;17H[30d[1P[30;17H[1P[30;17H[2P[30;17H[2P[30;17H[1P[30;17H[2P[30;17H[1P[30;17H[1P[30;17H[1P[30;17H[1P[30;17H[2P[30;17H[1P[30;17H[1P[30;17H[1P[30;17H[1P[30;17H[1P[30;17H[31d[31;48H}[K[31;17H[31;47H}[K[31;17H[31;46H}[K[31;17H[31;45H}[K[31;17H[31;44H}[K[31;17H[31;43H}[K[31;17H[31;42H}[K[31;17H[31;41H}[K[31;17H[32d[32;40H}[K[32;17H[32;39H}[K[32;17H[32;37H}[K[32;17H[32;36H}[K[32;17H[32;35H}[K[32;17H[32;34H}[K[32;17H[33d[33;32H}[K[33;17H[33;31H}[K[33;17H[33;29H}[K[33;17H[33;28H}[K[33;17H[33;27H}[K[33;17H[33;26H}[K[33;17H[33;25H}[K[33;17H[24G}[K[33;17H[23G}[K[Z[22G}[K[Z    }[K[Z[34d[1P[34;17H[1P[34;17H[1P[34;17H[1P[34;17H[2P[34;17H[1P[34;17H[1P[34;17H[1P[34;17H[2P[34;17H[1P[34;17H[1P[34;17H[1P[34;17H[1P[34;17H[1P[34;17H[35d[1P[35;17H[1P[35;17H[1P[35;17H[2P[35;17H[1P[35;17H[1P[35;17H[2P[35;17H[2P[35;17H[1P[35;17H[2P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[1P[35;17H[35;18H agent any[35;18H[35;19H agent any[35;19H[35;20H agent any[35;20H[35;21H agent any[35;21H[35;22H agent any[35;22H[36d[1P[36;22H[1P[36;22H[2P[36;22H[2P[36;22H[1P[36;22H[1P[36;22H[1P[36;22H[1P[36;22H[1P[36;22H[1P[36;22H[2P[36;22H[1P[36;22H[1P[36;22H[37d[1P[37;22H[1P[37;22H[2P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[1P[37;22H[38d[38;44Hsteps {[38;51H[1K script {[38;59H[1K docker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[38;67Hpush[40P[38;57H}[K[38;49H}[K[38;41H}[K[38;41H    agent {[38;45H    docker {[38;49H}[K[38;45H}[K[38;45Hsteps {[38;52H[1K sh '''[38;53H    cd ansible[38;57Hansible-playbook -i prod.yml studentlist.yml[38;53H'''[K[38;49H}[K[38;41H}[K[38;33H}[K[K[A[A[A[A[A[A[A[A[A[A[26d[A[23d[A[A[A[A[A[16d[A[13d[11d[9d[A[A[A[4d[A[17;27r[27;1H
+[1;41r[3;1Hpipeline {[K[4d  environment {[K[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[K[9dagent none[K[10;13Hstages {[K[11;17Hstage('Build Image') {[12;21Hagent any[13;17H    steps {[14;24H[1K	script {[K[15;28H[1K sh '''[16d[1K echo 'Building..'[17;35H[1K cd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[20;25H}[K[21;21H}[K[23d('Run container based on builded image') {[26d[26;23H script {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${I$[28;30Hleep 5[29;26H'''[K[30;24H}[K[31;21H}[K[32;17H}[K[33;17Hstage('Test image') {[34;18H   agent any[K[35;21Hsteps {[K[36;25Hscript {[K[37;29Hsh '''[K[38d  curl http://172.17.0.1:80/ | grep -q "error"[21d[A[18d[A[A[A[13d[11d[A[8d[A[5d[3d[3;39r[39;1H
+[1;41r[38;29H'''[3d[3;39r[39;1H
+[1;41r[38;33H}[3d[3;39r[39;1H[2S[1;41r[37;25H}[38;17H}[3d[3;39r[39;1H
+[1;41r[38;17Hstage('Clean Container') {[3d[3;39r[39;1H[2S[1;41r[37;21Hagent any[38;21Hsteps {[3d[3;39r[39;1H[2S[1;41r[37;23Hscript {[38dsh '''[3d[3;39r[39;1H
+[1;41r[38;34Hdocker rm -vf ${IMAGE_NAME}[3d[3;39r[39;1H[2S[1;41r[37;32H'''[38d	}[3d[3;39r[39;1H
+[1;41r[38;34H}[3d[2;39r[39;1H[2S[1;41r[2;1H[K[37;21H}[38;18Hstage('Push image on dockerhub') {[3d[3;39r[39;1H[2S[1;41r[37;23Hagent any[38;28Henvironment {[3d[3;39r[39;1H
+[1;41r[38;32HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[3d[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[K[4d[K[A[4d[A[3;81HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[4;65H}[5;52Hsteps {[6;68Hscript {[7;84Hsh '''[8;84Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME$[9;84Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PS$[10;84Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[11;84H'''[12;81H}[13;65H}[14;49H}[15;33Hstage('Ansible deploy') {[16;57Hagent {[17d	docker {[18;81Himage 'dirane/docker-ansible'[19;65H}[20;57H}[21;57Hsteps {[22d	script {[23dsh '''[24d	cd ansible[25;81Hansible-playbook -i prod.yml install-docker.yml[26;81Hansible-playbook -i prod.yml student-list.yml[27;73H'''[28;65H}[29;57H}[30;49H}[31;41H}[32;33H}[34;33H[31d[28d[25d[22d[19d[16d[13d[10d[7d[4d[2;39r[2;1H[19T[1;41r[3;29Hsh '''[4d  curl http://172.17.0.1:80/ | grep -q "error"[5;29H'''[6d	}[7;25H}[8;17H}[9;33Hstage('Clean Container') {[10;51Hagent any[11;51Hsteps {[12;66Hscript {[13;68Hsh '''[14;83Hdocker rm -vf ${IMAGE_NAME}[15;68H'''[16;65H}[17;49H}[18;33H}[19dstage('Push image on dockerhub') {[20;52Hagent any[21;52Henvironment {[39d[K[20;33H[17d[20d[17d[14d[11d[8;18H[Z[8;17H }[8;18H }[8;19H }[8;20H }[8;21H }[8;22H }[8;23H }[8;24H }[Z[8;25H }[8;26H }[8;27H }[8;28H }[8;29H }[8;30H }[8;31H }[8;32H }[Z[7;26H [8d[9;25H[A  [A[Z[7;25H }[7;26H }[7;27H  }[7;29H }[7;30H }[7;31H }[7;32H }[Z[7;33H }[7;34H }[7;35H }[7;36H }[7;37H }[7;38H }[7;39H }[7;40H }[Z[7;41H }[7;42H }[7;43H }[7;44H }[7;45H }[7;46H }[7;47H }[7;48H }[Z[6;34H[Z[6;33H }[6;34H }[6;35H  }[6;37H }[6;38H }[6;39H }[6;40H }[Z[6;41H }[6;42H }[6;43H }[6;44H }[6;45H }[6;46H }[6;47H }[6;48H }[Z[6;49H }[6;50H }[6;51H }[6;52H }[6;53H }[6;54H }[6;55H }[6;56H }[Z[6;57H }[6;58H }[6;59H }[6;60H }[6;61H }[6;62H }[6;63H }[6;64H }[Z}[K[6;64H }[Z[5;32H[4;65H[3;35H[2;39r[2;1H[19T[1;41r[3;29H'''[4;25H}[5;21H}[6;17H}[7;17Hstage('Run container based on builded image') {[8;21Hagent any[9;21Hsteps {[10;24Hscript {[11;26Hsh '''[12;29Hdocker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[13;29Hsleep 5[14;26H'''[15;24H}[16;21H}[17;17H}[18;17Hstage('Test image') {[19;21Hagent any[20;21Hsteps {[21;25Hscript {[39d[K[21;33H[20;28H[Any[18;38H[17;18H[A   }[A	[13;36H[12;65H[10;32H[8d[7;64H[6;18H[A   }[A	}[3;32H[2;38r[2;1H[16T[1;41r[3;1Hpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[18;65H[17;50H[A..'[15;35H[A[Z[13;28H[11;39H[10;21H[Ane[8;15H[7;45H[5d[4;26H[3;11H[4;26H[5;44H[7d"[9;23H[10d[11;39H[13;28H[14d	[15d''[16;53H[17;50H[18;65H[20;26H[21;22H[23;64H[24;30H[25d[26;32H[27d[28;65H[30;29H[31;25H[33;18H[34;38H[35;30H[36d[37d	[38d''[16;24r[16;1H[2T[1;41r[3;16H[1K	}[4;13H    stage('Run container based on builded image') {[5;17H    agent any[K[6;17H    steps {[K[7;23H[1K script {[K[8;25H[1K sh '''[9;28H[1K docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[10;28H[1K sleep 5[11;25H[1K '''[K[12;21H   }[K[13;21H}[K[14;17H}[K[15;17Hstage('Test image') {[16;21Hagent any[17;21Hsteps {[18;25Hscript {[K[19;29Hsh '''[K[20d  curl http://172.17.0.1:80/ | grep -q "error"[K[22;64H[1K	}[23;48H[1K	}[24;32H[1K	}[25;32H[1K	stage('Clean Container') {[26;50H[1K agent any[27;50H[1K steps {[28;65H[1K script {[K[29;67H[1K sh '''[30;82H[1K docker rm -vf ${IMAGE_NAME}[31;67H[1K '''[32;64H[1K	}[33;48H[1K	}[34;32H[1K	}[K[35;33H[1K stage('Push image on dockerhub') {[36;51H[1K agent any[37;51H[1K environment {[38;80H[1K	DOCKERHUB_LOGIN = credentials('dockerhub_team5')[20;65H[21;32H[22;65H[23;51H[24;34H[25;59H[27d[28;65H[30d[31d[32d[34;34H[35;65H[37d[38d7[2;39r8[39d[19S[1;41r[2;1H[K[20;65H}[21;52Hsteps {[22;68Hscript {[23;84Hsh '''[24;84Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME$[25;84Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PS$[26;84Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[27;84H'''[28;81H}[29;65H}[30;49H}[31;33Hstage('Ansible deploy') {[32;57Hagent {[33d	docker {[34;81Himage 'dirane/docker-ansible'[35;65H}[36;57H}[37;57Hsteps {[38d	script {[21;59H[23;65H[25d[26d[27d[28d[29d[30;50H[31;58H[33;65H[34d[35d[37d[38d	7[2;39r8[39d[19S[1;41r[2;1H[K[20;73Hsh '''[21d	cd ansible[22;81Hansible-playbook -i prod.yml install-docker.yml[23;81Hansible-playbook -i prod.yml student-list.yml[24;73H'''[25;65H}[26;57H}[27;49H}[28;41H}[29;33H}[20;65H[21d[23d[24d[25d[27;50H[28;42H[30;17H[31;33H[32d[31;33H[30;17H[28;42H[27;50H[26;58H[24;65H[22d[20d[A[A[16d	[A[13d[12;58H[11;50H[9;65H[A[9d[10d[11;50H[12;58H[13;65H[14d[15d[16d[A[15;73H[15;81Hi[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 86 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git status
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
 #
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
 #
-#	ansible/student-list.yml
+#	Jenkinsfile
 no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .[K*
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
-Reinitialized existing Git repository in /home/centos/student-list/.git/
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git add .
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git commit -m "jenkins[K[K[K[K[K[K[KJenkinsfoi[K[Kile"
+[ansible dd1dedc] Jenkinsfile
+ 1 file changed, 86 insertions(+)
+ create mode 100644 ansible/Jenkinsfile
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git push roi[K[K[Korigin ansible
+Password for 'https://fil-rouge-team5@github.com': 
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 1009 bytes | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://fil-rouge-team5@github.com//fil-rouge-team5/student-list.git
+   1ea9d37..dd1dedc  ansible -> ansible
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git push origin ansiblecommit -m "Jenkinsfile"add .[Kstatusnano Jenkinsfilels[Kdocker imagesls[Knano Jenkinsfile
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh '''[28;29Hdocker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE$[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 86 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[3;38r[38;1H
+[1;41r[1;153H(B[0;7mModified[38;37H(B[mcurl http://172.17.0.1:80/ | grep -q "error"[3d[3;38r[38;1H
+[1;41r[38;29H'''[3d[3;38r[38;1H[2S[1;41r[37;65H}[38;49H}[3d[3;38r[38;1H
+[1;41r[38;33H}[3d[3;38r[38;1H[2S[1;41r[37;33Hstage('Clean Container') {[38;51Hagent any[3d[3;38r[38;1H[2S[1;41r[37;51Hsteps {[38;66Hscript {[3d[3;38r[38;1H[2S[1;41r[37;68Hsh '''[38;83Hdocker rm -vf ${IMAGE_NAME}[3d[3;38r[38;1H
+[1;41r[38;68H'''[3d[3;38r[38;1H
+[1;41r[38;65H}[3d[2;38r[38;1H[2S[1;41r[2;1H[K[37;49H}[38;33H}[3d[3;38r[38;1H
+[1;41r[38;34Hstage('Push image on dockerhub') {[3d[3;38r[38;1H[2S[1;41r[37;52Hagent any[38;52Henvironment {[3d[3;38r[38;1H
+[1;41r[38;81HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[3d[3;38r[38;1H[2S[1;41r[37;65H}[38;52Hsteps {[3d[3;38r[38;1H[2S[1;41r[37;68Hscript {[38;84Hsh '''[3d[3;38r[38;1H[2S[1;41r[37;84Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME$[38;84Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PS$[3;1H[3;39r[39;1H[2S[1;41r[37;83H[1K docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[38;84H'''[3d[3;39r[39;1H[2S[1;41r[37;81H}[38;65H}[3d[3;39r[39;1H[2S[1;41r[37;49H}[38;33Hstage('Ansible deploy') {[3d[3;39r[39;1H
+[1;41r[38;57Hagent {[3d[3;39r[39;1H
+[1;41r[38;65Hdocker {[3d[3;39r[39;1H
+[1;41r[38;81Himage 'dirane/docker-ansible'[3d[3;39r[39;1H
+[1;41r[38;65H}[3d[2;39r[39;1H[2S[1;41r[2;1H[K[37;57H}[38;57Hsteps {[3d[3;39r[39;1H
+[1;41r[38;65Hscript {[3d[3;39r[39;1H[2S[1;41r[37;73Hsh '''[38d	cd ansible[3d[3;39r[39;1H[2S[1;41r[37;81Hansible-playbook -i prod.yml install-docker.yml[38;81Hansible-playbook -i prod.yml student-list.yml[3d[3;39r[39;1H[2S[1;41r[37;73H'''[38;65H}[3d[3;39r[39;1H[2S[1;41r[37;57H}[38;49H}[3d[3;39r[39;1H
+[1;41r[38;41H}[3d[3;39r[39;1H[2S[1;41r[37;33H}[3d[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[K[4d[K[A[3;57HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[4;49H}[5;44Hsteps {[6d script {[7dsh '''[8;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[9;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[10;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[11;60H'''[12;57H}[13;49H}[14;41H}[15dstage('Ansible deploy') {[16;45Hagent {[17;49Hdocker {[18dimage 'dirane/docker-ansible'[19;49H}[20;45H}[21dsteps {[22;49Hscript {[23;53Hsh '''[24;57Hcd ansible[25;57Hansible-playbook -i prod.yml install-docker.yml[26;57Hansible-playbook -i prod.yml studentlist.yml[27;53H'''[28;49H}[29;45H}[30;41H}[31;33H}[32;25H}[33;9H[30d[27d[24d[21d[18d[15d[12d[9d[6d[3d[2;38r[2;1H[19T[1;41r[3;29Hsh '''[4d  curl http://172.17.0.1:80/ | grep -q "error"[5;29H'''[6d	}[7;25H}[8;17H}[9;33Hstage('Clean Container') {[10;43Hagent any[11;43Hsteps {[12dscript {[13;52Hsh '''[14d docker rm -vf ${IMAGE_NAME}[15;52H'''[16;49H}[17;41H}[18;33H}[19dstage('Push image on dockerhub') {[20;44Hagent any[21;44Henvironment {[19;9H[16d[13d[10d[7d[4d[2;39r[2;1H[19T[1;41r[3;29H'''[4;25H}[5;21H}[6;17H}[7;17Hstage('Run container based on builded image') {[8;21Hagent any[9;21Hsteps {[10;24Hscript {[11;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[12d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[13;29Hsleep 5[14;26H'''[15;24H}[16;21H}[17;17H}[18;17Hstage('Test image') {[19;21Hagent any[20;21Hsteps {[21;25Hscript {[39d[K[20;9H[17d[14d[11d[8d[5d[2;38r[2;1H[16T[1;41r[3;1Hpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[18;9H[15d[12d[9d[6d[3d[6d[9d[12d[15d[18d[21d[24d[27d[30d[33d[36d[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 85 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nano Jenkinsfilegit push origin ansiblecommit -m "Jenkinsfile"add .[Kstatusnano Jenkinsfile[6Pgit status[1Padd .
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git add .nano Jenkinsfilegit push origin ansiblecommit -m "Jenkinsfile" "M"o"d"[1P"[1P"[1P"m"o"d"i"f"i"e"d"
+[ansible a87ce0e] Jenkinsfile modified
+ 1 file changed, 47 insertions(+), 48 deletions(-)
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git commit -m "Jenkinsfile modified"add .[Knano Jenkinsfilegit push origin ansiblecommit -m "Jenkinsfile"[4Ppush origin ansible
+Password for 'https://fil-rouge-team5@github.com': 
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 677 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)[Kremote: Resolving deltas:  33% (1/3)[Kremote: Resolving deltas:  66% (2/3)[Kremote: Resolving deltas: 100% (3/3)[Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To https://fil-rouge-team5@github.com//fil-rouge-team5/student-list.git
+   dd1dedc..a87ce0e  ansible -> ansible
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git push origin ansiblecommit -m "Jenkinsfile modified"add .[Knano Jenkinsfilegit push origin ansible[7Pnano Jenkinsfile
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[3;38r[38;1H
+[1;41r[1;153H(B[0;7mModified[38;37H(B[mcurl http://172.17.0.1:80/ | grep -q "error"[3d[3;38r[38;1H
+[1;41r[38;29H'''[3d[3;38r[38;1H[2S[1;41r[37;33H}[38;25H}[3d[3;38r[38;1H[2S[1;41r[37;17H}[38;33Hstage('Clean Container') {[3d[2;38r[38;1H[2S[1;41r[2;1H[K[37;43Hagent any[38;43Hsteps {[3d[3;38r[38;1H
+[1;41r[38;50Hscript {[3d[3;38r[38;1H[2S[1;41r[37;52Hsh '''[38d docker rm -vf ${IMAGE_NAME}[3d[3;38r[38;1H[2S[1;41r[37;52H'''[38;49H}[3d[2;38r[38;1H[2S[1;41r[2;1H[K[37;41H}[38;33H}[3d[3;38r[38;1H
+[1;41r[38;34Hstage('Push image on dockerhub') {[3d[3;38r[38;1H[2S[1;41r[37;44Hagent any[38;44Henvironment {[3d[3;38r[38;1H
+[1;41r[38;57HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[3d[3;38r[38;1H
+[1;41r[38;49H}[3d[3;38r[38;1H[2S[1;41r[37;44Hsteps {[38d script {[3d[3;38r[38;1H
+[1;41r[38;60Hsh '''[3d[3;38r[38;1H
+[1;41r[38;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[3d[3;38r[38;1H
+[1;41r[38;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[3d[3;39r[39;1H
+[1;41r[38;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[3d[3;39r[39;1H
+[1;41r[38;60H'''[3d[2;39r[39;1H[2S[1;41r[2;1H[K[37;57H}[38;49H}[3d[3;39r[39;1H
+[1;41r[38;41H}[3d[3;39r[39;1H
+[1;41r[38;42Hstage('Ansible deploy') {[3d[3;39r[39;1H[2S[1;41r[37;45Hagent {[38;49Hdocker {[3d[3;39r[39;1H
+[1;41r[38;57Himage 'dirane/docker-ansible'[3d[3;39r[39;1H
+[1;41r[38;49H}[3d[2;39r[39;1H[2S[1;41r[2;1H[K[37;45H}[38dsteps {[3d[3;39r[39;1H
+[1;41r[38;49Hscript {[3d[3;39r[39;1H[2S[1;41r[37;53Hsh '''[38;57Hcd ansible[3d[3;39r[39;1H
+[1;41r[38;57Hansible-playbook -i prod.yml install-docker.yml[3d[3;39r[39;1H[2S[1;41r[37;57Hansible-playbook -i prod.yml studentlist.yml[38;53H'''[3d[3;39r[39;1H
+[1;41r[38;49H}[3d[3;39r[39;1H
+[1;41r[38;45H}[3d[2;39r[39;1H[2S[1;41r[2;1H[K[37;41H}[38;33H}[3d[3;39r[39;1H[2S[1;41r[37;25H}[3d[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H[2S[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[3;39r[39;1H
+[1;41r[3;1H[2;39r[39;1H[2S[1;41r[2;1H[K[3d[K[3;57HDOCKERHUB_LOGIN = credentials('dockerhub_team5')[4;49H}[5;44Hsteps {[6d script {[7dsh '''[8;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[9;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[10;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[11;60H'''[12;57H}[13;49H}[14;41H}[15dstage('Ansible deploy') {[16;45Hagent {[17;49Hdocker {[18dimage 'dirane/docker-ansible'[19;49H}[20;45H}[21dsteps {[22;49Hscript {[23;53Hsh '''[24;57Hcd ansible[25;57Hansible-playbook -i prod.yml install-docker.yml[26;57Hansible-playbook -i prod.yml studentlist.yml[27;53H'''[28;49H}[29;45H}[30;41H}[31;33H}[32;25H}[33;9H[A[A[29d[A[A[25d[23d[A[A[19d[17d[A[14d[A[A[10d[8d[A[5d[A[A[2;38r[2;1H[19T[1;41r[3;29Hsh '''[4d  curl http://172.17.0.1:80/ | grep -q "error"[5;29H'''[6d	}[7;25H}[8;17H}[9;33Hstage('Clean Container') {[10;43Hagent any[11;43Hsteps {[12dscript {[13;52Hsh '''[14d docker rm -vf ${IMAGE_NAME}[15;52H'''[16;49H}[17;41H}[18;33H}[19dstage('Push image on dockerhub') {[20;44Hagent any[21;44Henvironment {[21;9H[19d[17d[A[A[13d[A[10d[8d[6d[4d[A[2;39r[2;1H[19T[1;41r[3;29H'''[4;25H}[5;21H}[6;17H}[7;17Hstage('Run container based on builded image') {[8;21Hagent any[9;21Hsteps {[10;24Hscript {[11;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[12d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[13;29Hsleep 5[14;26H'''[15;24H}[16;21H}[17;17H}[18;17Hstage('Test image') {[19;21Hagent any[20;21Hsteps {[21;25Hscript {[39d[K[21;9H[A[A[17d[A[14d[12d[A[9d[A[6d[A[A[A[2;38r[2;1H[16T[1;41r[3;1Hpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[18;9H[A[A[A[A[A[11d[9d[7d[5d[A[A[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 85 lines ](B[m[K[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nano Jenkinsfilegit push origin ansiblecommit -m "Jenkinsfile modified"add .[K
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git add .nano Jenkinsfilegit push origin ansiblecommit -m "Jenkinsfile modified"1"[1P" "2"
 # On branch ansible
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#	new file:   ansible/student-list.yml
-#	modified:   website/index.php
-#	modified:   {
-#
 # Changes not staged for commit:
-#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	deleted:    ansible/front-back.yml
+#	modified:   ../{
 #
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
-[ansible 46a7273] ansible file
- 4 files changed, 741 insertions(+), 246 deletions(-)
- delete mode 100644 ansible/front-back.yml
- create mode 100644 ansible/student-list.yml
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin main
-Password for 'https://fil-rouge-team5@github.com': 
-Everything up-to-date
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git branch
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git add *
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git add *commit -m "Jenkinsfile modified 2"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd .[Knano Jenkinsfilegit push origin ansible[7Pnano Jenkinsfile[7Pgit add .nano Jenkinsfilegit push origin ansiblecommit -m "Jenkinsfile modified"
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git commit -m "Jenkinsfile modified"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git branch
+* ansible
+  main
+  master
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git branchcommit -m "Jenkinsfile "[1P[1P[1@a[1@ 
+fatal: Paths with -a does not make sense.
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls[K[Kgit sat[K[Ktatus
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nano Jenkinsfile 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[9d[10d[12d[14d[16d[17d[18d[19d[20d[21d[22d[23d[24d[26d[27d[39d[K[29d[30d[32d[34d[36d[37d[20;25r[20;1H[3T[1;41r[3;16H[1K	}[4;13H    stage('Run container based on builded image') {[5;17H    agent any[K[6;17H    steps {[K[7;23H[1K script {[K[8;25H[1K sh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[9d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[10;28H[1K sleep 5[11;25H[1K '''[K[12;21H   }[K[13;21H}[K[14;17H}[K[15;17Hstage('Test image') {[16;21Hagent any[K[17;21Hsteps {[K[18;25Hscript {[K[19;28H sh '''[20d  curl http://172.17.0.1:80/ | grep -q "error"[21;29H'''[22d	}[24;17H}[K[25;32H[1K	stage('Clean Container') {[26;42H[1K agent any[27;42H[1K steps {[K[28;49H[1K script {[K[29;51H[1K sh '''[30d[1K docker rm -vf ${IMAGE_NAME}[31;51H[1K '''[32;48H[1K	}[33;40H[1K	}[34;32H[1K	}[K[35;33H[1K stage('Push image on dockerhub') {[36;43H[1K agent any[37;43H[1K environment {[38d[1K	DOCKERHUB_LOGIN = credentials('dockerhub_team5')[20d[21d[23d[24d[25d[26d[28d[29d[30d[31d[32d[33d[35d[36d[37d[38d7[2;39r8[39d[19S[1;41r[2;1H[K[20;49H}[21;44Hsteps {[22d script {[23dsh '''[24;60Hdocker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[25;60Hdocker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}[26;60Hdocker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[27;60H'''[28;57H}[29;49H}[30;41H}[31dstage('Ansible deploy') {[32;45Hagent {[33;49Hdocker {[34dimage 'dirane/docker-ansible'[35;49H}[36;45H}[37dsteps {[38;49Hscript {[21d[22d[23d[25d[26d[28d[29d[30d[31d[32d[34d[35d[36d[37d[2;39r[39;1H[19S[1;41r[2;1H[K[20;53Hsh '''[21;57Hcd ansible[22;57Hansible-playbook -i prod.yml install-docker.yml[23;57Hansible-playbook -i prod.yml studentlist.yml[24;53H'''[25;49H}[26;45H}[27;41H}[28;33H}[29;25H}[20d[21d[22d[23d[24d[26d[27d[28d[29d[31d[40d[J[41;162H[41;1H[?1049l[?1l>]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nano Jenkinsfile [7Pgit statuscommit -a "Jenkinsfile "status[K
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git add Jenkinsfile 
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git commit "[K-m "modified Jne[K[Kenkinsfile"
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   ../{
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git checkout -- file Jenkinsfile 
+error: pathspec 'file' did not match any file(s) known to git.
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ git checkout -- file Jenkinsfile [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P [Kcd ..
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ ls[K[Kgit braanch[K[K[K[Knch
 * ansible
   main
   master
@@ -5408,98 +5786,180 @@ Everything up-to-date
 #	modified:   {
 #
 no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git [K[K[K[Kecho "ansible" >> README.md .MD
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ GIT STAT[K[K[K[K[K[K[K[Kgit stacalhost:~/student-list[centos@localhost student-list]$ git checkout -b ansible
-D	ansible/front-back.yml
-M	website/index.php
-M	{
-Switched to a new branch 'ansible'
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git brancj[Kh
-* ansible
-  main
-  master
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add Jenkinsfile 
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git com[K[K[K[K[K[K[Kgit add Jenkinsfile [10Pstatusbranch[5Pcd ..git checkout -- file Jenkinsfile ommit -m "modified Jenkinsfile"[3Pheckout -- file Jenkinsfile ommit -m "modified Jenkinsfile"
 # On branch ansible
 # Changes not staged for commit:
-#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	deleted:    ansible/front-back.yml
-#	modified:   website/index.php
 #	modified:   {
 #
-# Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
-#
-#	ansible/student-list.yml
 no changes added to commit (use "git add" and/or "git commit -a")
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .[K*
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git init
-Reinitialized existing Git repository in /home/centos/student-list/.git/
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "modified Jenkinsfile"[16Padd Jenkinsfile [10Pstatusbranch[5Pcd ..git checkout -- file Jenkinsfile ommit -m "modified Jenkinsfile"[3Pheckout -- file Jenkinsfile [1P[1P[1P[1P[1P
 ]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
 # On branch ansible
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#	new file:   ansible/student-list.yml
-#	modified:   website/index.php
-#	modified:   {
-#
 # Changes not staged for commit:
-#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	deleted:    ansible/front-back.yml
+#	modified:   {
 #
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add .
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'ansible/front-back.yml' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git add --all
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "ansile file"[1@b
-[ansible 46a7273] ansible file
- 4 files changed, 741 insertions(+), 246 deletions(-)
- delete mode 100644 ansible/front-back.yml
- create mode 100644 ansible/student-list.yml
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin main
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"
+fatal: Paths with -a does not make sense.
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"[1P "Jenkins"m "Jenkins"
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin ansible/[K
 Password for 'https://fil-rouge-team5@github.com': 
 Everything up-to-date
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git branch
-* ansible
-  main
-  master
-]0;centos@localhost:~/student-list[centos@localhost student-list]$ git st
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ d[Kls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B "modified Jenkinsfile"
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "modified Jenkinsfile"[16Padd Jenkinsfile [10Pstatusbranch[5Pcd ..git checkout -- file Jenkinsfile ommit -m "modified Jenkinsfile"[3Pheckout -- file Jenkinsfile [1P[1P[1P[1P[1P
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"
+fatal: Paths with -a does not make sense.
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"[1P "Jenkins"m "Jenkins"
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin ansible/[K
+Password for 'https://fil-rouge-team5@github.com': 
+Everything up-to-date
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ d[Kls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[A[2;38r[2;1HM[1;41r[1;153H(B[0;7mModified[4d(B[m[A#deploiement of	t stu[39d[K[3;22Hdd ent-list[39d(B[0;7mSave modified buffer [3Pheckout -- file Jenkinsfile [1P[1P[1P[1P[1P
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"
+fatal: Paths with -a does not make sense.
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"[1P "Jenkins"m "Jenkins"
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin ansible/[K
+Password for 'https://fil-rouge-team5@github.com': 
+Everything up-to-date
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ d[Kls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[A[2;38r[2;1HM[1;41r[1;153H(B[0;7mModified[4d(B[m[A#deploiement of	t stu[39d[K[3;22Hdd ent-list[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7m        [39;72H(B[m[1K	(B[0;7m[ Wrote 86 ommit -m "modified Jenkinsfile"[3Pheckout -- file Jenkinsfile [1P[1P[1P[1P[1P
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"
+fatal: Paths with -a does not make sense.
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"[1P "Jenkins"m "Jenkins"
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin ansible/[K
+Password for 'https://fil-rouge-team5@github.com': 
+Everything up-to-date
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ d[Kls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[A[2;38r[2;1HM[1;41r[1;153H(B[0;7mModified[4d(B[m[A#deploiement of	t stu[39d[K[3;22Hdd ent-list[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                                                                                                      [40;1H Y(B[m Yes[K[41d(B[0;7m N(B[m No  [41;17H(B[0;7m^C(B[m Cancel[K[39;62H(B[0;7mFile Name to Write: Jenkinsfile                             [40d^G(B[m Get Help[40;41H(B[0;7mM-D(B[m DOS Format[40;81H(B[0;7mM-A(B[m Append[40;121H(B[0;7mM-B(B[m Backup File[41d(B[0;7m^C(B[m Cancel	         [41;41H(B[0;7mM-M(B[m Mac Format[41;81H(B[0;7mM-P(B[m Prepend[39;32H[40d[39;49m(B[m[J[1;153H(B[0;7mtaged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -m "modified Jenkinsfile"[16Padd Jenkinsfile [10Pstatusbranch[5Pcd ..git checkout -- file Jenkinsfile ommit -m "modified Jenkinsfile"[3Pheckout -- file Jenkinsfile [1P[1P[1P[1P[1P
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git status
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"
+fatal: Paths with -a does not make sense.
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git commit -a "Jenkins"[1P "Jenkins"m "Jenkins"
+# On branch ansible
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   {
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ git push origin ansible/[K
+Password for 'https://fil-rouge-team5@github.com': 
+Everything up-to-date
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ d[Kls
+{  [0m[01;34mansible[0m  docker-compose.yml  Jenkinsfile  README.md  [01;34msimple_api[0m  [01;34mwebsite[0m
+]0;centos@localhost:~/student-list[centos@localhost student-list]$ cd ansible/
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ ls
+[0m[01;34mgroup_vars[0m  install-docker.yml  Jenkinsfile  prod.yml  student-list.yml
+]0;centos@localhost:~/student-list/ansible[centos@localhost ansible]$ nanao[K[Ko Jenkinsfile 
+[?1049h[1;41r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.3.1                                         File: Jenkinsfile                                                                                        [3;1H(B[mpipeline {[4d  environment {[5;17HIMAGE_NAME = "student-list"[6;17HIMAGE_TAG = "latest"[7;17HIMAGE_REPO = "filrougeteam5"[8;14H}[9dagent none[10;13Hstages {[11;17Hstage('Build Image') {[12;21Hagent any[13;21Hsteps {[14;25Hscript {[15;29Hsh '''[16d echo 'Building..'[17;36Hcd simple_api/[18;36Hdocker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} .[19;29H'''[20;25H}[21;21H}[22;17H}[23;17Hstage('Run container based on builded image') {[24;21Hagent any[25;21Hsteps {[26;24Hscript {[27;26Hsh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v[28d/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}[29;29Hsleep 5[30;26H'''[31;24H}[32;21H}[33;17H}[34;17Hstage('Test image') {[35;21Hagent any[36;21Hsteps {[37;25Hscript {[38;29Hsh '''[39;73H(B[0;7m[ Read 85 lines ][40d^G(B[m Get Help[40;28H(B[0;7m^O(B[m WriteOut[40;55H(B[0;7m^R(B[m Read File[40;82H(B[0;7m^Y(B[m Prev Page[40;109H(B[0;7m^K(B[m Cut Text[40;136H(B[0;7m^C(B[m Cur Pos[41d(B[0;7m^X(B[m Exit[41;28H(B[0;7m^J(B[m Justify[41;55H(B[0;7m^W(B[m Where Is[41;82H(B[0;7m^V(B[m Next Page[41;109H(B[0;7m^U(B[m UnCut Text[41;136H(B[0;7m^T(B[m To Spell[3d[4d[A[2;38r[2;1HM[1;41r[1;153H(B[0;7mModified[4d(B[m[A#deploiement of	t stu[39d[K[3;22Hdd ent-list[39d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                      
