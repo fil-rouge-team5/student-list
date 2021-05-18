@@ -22,8 +22,8 @@ pipeline {
                     agent any
                     steps {
                        script {
-                         sh '''
-docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                         sh ''' docker run --name ${IMAGE_NAME} -d -p 80:5000 -v 
+/home/centos/student-list/simple_api/student_age.json:/data/student_age.json ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
                             sleep 5
                          '''
                        }
@@ -49,7 +49,7 @@ docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simpl
                                                 }
                                         }
                                 }
-                                 stage('Push image on private registry') {
+                                 stage('Push image on dockerhub') {
                                            agent any
                                            environment {
                                                         DOCKERHUB_LOGIN = credentials('dockerhub_team5')
@@ -57,12 +57,29 @@ docker run --name ${IMAGE_NAME} -d -p 80:5000 -v /home/centos/student-list/simpl
                                            steps {
                                                    script {
                                                            sh '''
-                                                           docker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} localhost:5007/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           docker tag ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
                                                            docker login --username ${DOCKERHUB_LOGIN_USR} --password ${DOCKERHUB_LOGIN_PSW}
-                                                           docker push localhost:5007/${IMAGE_NAME}:${IMAGE_TAG}
+                                                           docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
                                                            '''
                                                         }
                                                 }
                                         }
+                                         stage('Ansible deploy') {
+                                            agent {
+                                                docker {
+                                                        image 'dirane/docker-ansible'
+                                                } 
+                                            }
+                                            steps {
+                                                script {
+                                                    sh '''
+                                                        cd ansible
+                                                        ansible-playbook -i prod.yml install-docker.yml
+                                                        ansible-playbook -i prod.yml studentlist.yml
+                                                    '''
+                                                }
+                                            }
+                                        }
                                 }
                         }
+        
