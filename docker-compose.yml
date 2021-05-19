@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
     API:
-        image: api:v1
+        image: filrougeteam5/student-list
         container_name: my_container_app
         volumes:
             - ./simple_api/student_age.json:/data/student_age.json
