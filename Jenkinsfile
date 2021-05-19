@@ -68,7 +68,7 @@ pipeline {
 						  stage('Yamlint to check the yaml syntaxe') {
 							agent {
 								docker {
-										image 'sdesbure/yamllint'
+										image 'cytopia/yamllint'
 								}
 							}
 							steps {
@@ -79,7 +79,7 @@ pipeline {
 									'''
 								}
 							}
-						}
+                 				}
 						 stage('Ansible deploy') {
 							agent {
 								docker {
