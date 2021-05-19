@@ -23,7 +23,7 @@
     - name: Create website container
       docker_container:
         name: "website"
-        image: "php:7.2-apache"
+        image: "php:apache"
         ports: 80:80
         pull: true
         env:
