@@ -49,7 +49,7 @@ pipeline {
 								}
 						}
 				}
-				 stage('Push image on dockerhub') {
+				 stage('Push image on docker private registry') {
 						   agent any
 						   environment {
 										DOCKERHUB_LOGIN = credentials('dockerhub_team5')
