@@ -68,14 +68,13 @@ pipeline {
 						  stage('Yamlint to check the yaml syntaxe') {
 							agent {
 								docker {
-										image 'cytopia/yamllint'
+										image 'docker'
 								}
 							}
 							steps {
 								script {
 									sh '''
-										yamllint --version
-										yamllint \${WORKSPACE}/ansible/student-list.yml
+										docker run --rm -it -v /home/centos/student-list:/data cytopia/yamllint .
 									'''
 								}
 							}
