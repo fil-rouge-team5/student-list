@@ -74,7 +74,7 @@ pipeline {
 							steps {
 								script {
 									sh '''
-										docker run --rm -v $(pwd):/data cytopia/yamllint .
+										docker run --rm -v /home/centos/student-list/ansible:/data cytopia/yamllint .
 									'''
 								}
 							}
