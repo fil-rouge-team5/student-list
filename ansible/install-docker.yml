@@ -1,8 +1,7 @@
-  
 ---
 - name: Install docker on a Centos 7 machine
   hosts: prod
-  become: yes
+  become: true
   tasks:
   - name: Install pre-requisite packages
     yum:
